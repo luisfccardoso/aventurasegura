@@ -1,67 +1,56 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const startBtn = document.getElementById('start-btn');
-    const playAgainBtn = document.getElementById('play-again-btn');
+let currentScenarioIndex = 0;
+let scenarios;
 
-    const scenarios = [
-        {
-            historia: 'Você encontrou um e-mail suspeito. O que você faz?',
-            opcao1: 'Excluir sem abrir',
-            opcao2: 'Abrir e clicar no link',
-            correto: 1
-        },
-        {
-            historia: 'Uma pessoa desconhecida te envia uma solicitação de amizade. O que você faz?',
-            opcao1: 'Aceitar',
-            opcao2: 'Ignorar',
-            correto: 0
-        }
-    ];
+fetch('cenarios.json')
+  .then(response => response.json())
+  .then(data => {
+    scenarios = data;
+    displayScenario();
+  });
 
-    let currentScenarioIndex = 0;
-    let score = 0;
-    let lives = 3;
+function displayScenario() {
+  const scenario = scenarios[currentScenarioIndex];
+  document.getElementById('scenario-title').textContent = scenario.titulo;
+  document.getElementById('scenario-description').textContent = scenario.descricao;
 
-    startBtn.addEventListener('click', function() {
-        renderScenario();
-    });
+  const optionsDiv = document.getElementById('options');
+  optionsDiv.innerHTML = '';
 
-    playAgainBtn.addEventListener('click', function() {
-        window.location.href = '/';
-    });
+  scenario.opcoes.forEach(opcao => {
+    const button = document.createElement('button');
+    button.textContent = opcao.texto;
+    button.onclick = () => checkAnswer(opcao.id);
+    optionsDiv.appendChild(button);
+  });
+}
 
-    function renderScenario() {
-        const scenario = scenarios[currentScenarioIndex];
-        document.getElementById('scenario').textContent = scenario.historia;
-        document.getElementById('option1').textContent = scenario.opcao1;
-        document.getElementById('option2').textContent = scenario.opcao2;
-        document.getElementById('score').textContent = 'Pontuação: ' + score;
-        document.getElementById('lives').textContent = 'Vidas: ' + lives;
+function checkAnswer(opcaoId) {
+  const scenario = scenarios[currentScenarioIndex];
+  const opcao = scenario.opcoes.find(opcao => opcao.id === opcaoId);
 
-        document.getElementById('option1').addEventListener('click', function() {
-            checkOption(0);
-        });
+  if (opcaoId === scenario.resposta_correta) {
+    displayFeedback(scenario.resposta_feedback.correta);
+  } else {
+    displayFeedback(scenario.resposta_feedback.incorreta);
+  }
+}
 
-        document.getElementById('option2').addEventListener('click', function() {
-            checkOption(1);
-        });
-    }
+function displayFeedback(feedback) {
+  document.getElementById('screen').innerHTML = `
+    <h1>Resultado</h1>
+    <p>${feedback}</p>
+    <button onclick="nextScenario()">Próximo Cenário</button>
+  `;
+}
 
-    function checkOption(selectedOption) {
-        const scenario = scenarios[currentScenarioIndex];
-        if (selectedOption === scenario.correto) {
-            score += 30;
-        } else {
-            score -= 10;
-            lives -= 1;
-        }
-
-        currentScenarioIndex += 1;
-
-        if (lives <= 0 || currentScenarioIndex >= scenarios.length) {
-            document.getElementById('final-score').textContent = 'Sua pontuação final é: ' + score;
-            return;
-        }
-
-        renderScenario();
-    }
-});
+function nextScenario() {
+  currentScenarioIndex++;
+  if (currentScenarioIndex < scenarios.length) {
+    displayScenario();
+  } else {
+    document.getElementById('screen').innerHTML = `
+      <h1>Parabéns!</h1>
+      <p>Você completou todos os cenários.</p>
+    `;
+  }
+}

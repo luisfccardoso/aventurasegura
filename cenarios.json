@@ -1,0 +1,43 @@
+[
+    {
+      "id": 1,
+      "titulo": "Phishing",
+      "descricao": "Você recebe um e-mail aparentemente da sua instituição bancária solicitando que você clique em um link para atualizar suas informações de login. Como você reagiria?",
+      "opcoes": [
+        {
+          "id": 1,
+          "texto": "Ignorar e não clicar no link"
+        },
+        {
+          "id": 2,
+          "texto": "Clicar no link e fornecer informações"
+        }
+      ],
+      "resposta_correta": 1,
+      "resposta_feedback": {
+        "correta": "Correto! Você evitou cair em um ataque de phishing.",
+        "incorreta": "Incorreto! Clicar no link poderia expor suas informações pessoais."
+      }
+    },
+    {
+      "id": 2,
+      "titulo": "Senhas Fracas",
+      "descricao": "Você descobre que uma de suas senhas é muito fraca e pode ser facilmente adivinhada. Como você escolheria uma senha mais segura?",
+      "opcoes": [
+        {
+          "id": 1,
+          "texto": "Usar uma senha mais longa e complexa"
+        },
+        {
+          "id": 2,
+          "texto": "Continuar usando a mesma senha"
+        }
+      ],
+      "resposta_correta": 1,
+      "resposta_feedback": {
+        "correta": "Correto! Usar senhas mais longas e complexas aumenta a segurança.",
+        "incorreta": "Incorreto! Continuar usando a mesma senha pode expor suas contas a riscos."
+      }
+    }
+  ]
+  
