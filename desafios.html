@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aventura Segura</title>
+    <title>Desafios</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body onload="loadChallenge()">
     <div class="container">
-        <h1>Aventura Segura</h1>
-        <button onclick="startGame()">Iniciar Desafios</button>
+        <h2>Desafio</h2>
+        <p id="pergunta"></p>
+        <div id="opcoes"></div>
     </div>
 
     <script src="script.js"></script>
