@@ -1,61 +1,32 @@
-from flask import Flask, render_template, request, redirect, url_for, session
-from flask_sqlalchemy import SQLAlchemy
+from flask import Flask, render_template, redirect, request, url_for, session
 
-# Initialize the database object globally
-db = SQLAlchemy()
+app = Flask(__name__)
+app.secret_key = 'supersecretkey'
 
-def create_app():
-    app = Flask(__name__)
-    app.secret_key = 'supersecretkey'
-    
-    # Configuração do banco de dados SQLite em um arquivo
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///jogo_seguranca.db'
+# Configurações adicionais para construção de URLs
+app.config['SERVER_NAME'] = '0.0.0.0:8000'  # Altere para o host e a porta do seu servidor
+app.config['APPLICATION_ROOT'] = '/'
+app.config['PREFERRED_URL_SCHEME'] = 'http'
 
-    # Configurações adicionais para construção de URLs
-    app.config['SERVER_NAME'] = 'localhost:8000'  # Altere para o host e a porta do seu servidor
-    app.config['APPLICATION_ROOT'] = '/'
-    app.config['PREFERRED_URL_SCHEME'] = 'http'
-    
-    # Initialize the database with the app
-    db.init_app(app)
-    
-    with app.app_context():
-        db.create_all()
-        # Adiciona cenários ao banco de dados se não existirem
-        if Cenario.query.count() == 0:
-            cenarios = [
-                Cenario(imagem=url_for('static', filename='images/image1.jpg'), historia='Você encontrou um e-mail suspeito. O que você faz?',
-                        opcao1='Excluir sem abrir', opcao2='Abrir e clicar no link', correto=0),
-                Cenario(imagem=url_for('static', filename='images/image2.jpg'), historia='Uma pessoa desconhecida te envia uma solicitação de amizade. O que você faz?',
-                        opcao1='Aceitar', opcao2='Ignorar', correto=1)
-            ]
-            db.session.bulk_save_objects(cenarios)
-            db.session.commit()
-    
-    return app
-
-# Modelo do Jogador
-class Jogador(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    nome = db.Column(db.String(100), nullable=False)
-    pontuacao = db.Column(db.Integer, nullable=False)
-    vidas = db.Column(db.Integer, nullable=False)
-
-# Modelo do Cenário
-class Cenario(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    imagem = db.Column(db.String(255), nullable=False)
-    historia = db.Column(db.Text, nullable=False)
-    opcao1 = db.Column(db.String(255), nullable=False)
-    opcao2 = db.Column(db.String(255), nullable=False)
-    correto = db.Column(db.Integer, nullable=False)
-
-app = create_app()
+# Lista de cenários
+cenarios = [
+    {
+        'historia': 'Você encontrou um e-mail suspeito. O que você faz?',
+        'opcao1': 'Excluir sem abrir',
+        'opcao2': 'Abrir e clicar no link',
+        'correto': 1
+    },
+    {
+        'historia': 'Uma pessoa desconhecida te envia uma solicitação de amizade. O que você faz?',
+        'opcao1': 'Aceitar',
+        'opcao2': 'Ignorar',
+        'correto': 0
+    }
+]
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
-        session['name'] = request.form['name']
         session['score'] = 0
         session['lives'] = 3
         session['current_scenario'] = 0
@@ -64,14 +35,13 @@ def index():
 
 @app.route('/game', methods=['GET', 'POST'])
 def game():
-    if 'name' not in session:
+    if 'score' not in session:
         return redirect(url_for('index'))
 
-    scenarios = Cenario.query.all()
     if request.method == 'POST':
         selected_option = int(request.form['option'])
-        scenario = scenarios[session['current_scenario']]
-        if selected_option == scenario.correto:
+        scenario = cenarios[session['current_scenario']]
+        if selected_option == scenario['correto']:
             session['score'] += 30
         else:
             session['score'] -= 10
@@ -79,24 +49,22 @@ def game():
 
         session['current_scenario'] += 1
 
-        if session['lives'] <= 0 or session['current_scenario'] >= len(scenarios):
-            jogador = Jogador(nome=session['name'], pontuacao=session['score'], vidas=session['lives'])
-            db.session.add(jogador)
-            db.session.commit()
-            return redirect(url_for('end'))
+        if session['lives'] <= 0 or session['current_scenario'] >= len(cenarios):
+            final_score = session['score']
+            session.clear()
+            return render_template('end.html', score=final_score)
 
-    if session['current_scenario'] < len(scenarios):
-        scenario = scenarios[session['current_scenario']]
+    if session['current_scenario'] < len(cenarios):
+        scenario = cenarios[session['current_scenario']]
         return render_template('game.html', scenario=scenario, score=session['score'], lives=session['lives'])
     else:
-        jogador = Jogador(nome=session['name'], pontuacao=session['score'], vidas=session['lives'])
-        db.session.add(jogador)
-        db.session.commit()
-        return redirect(url_for('end'))
+        final_score = session['score']
+        session.clear()
+        return render_template('end.html', score=final_score)
 
 @app.route('/end')
 def end():
-    if 'name' not in session:
+    if 'score' not in session:
         return redirect(url_for('index'))
 
     final_score = session['score']
