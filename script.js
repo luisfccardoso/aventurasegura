@@ -46,3 +46,7 @@ function checkAnswer(resposta) {
         }
     });
 }
+
+function startGame() {
+    window.location.href = "desafios.html";
+}
