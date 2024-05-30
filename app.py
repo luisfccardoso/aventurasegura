@@ -10,6 +10,11 @@ def create_app():
     
     # Configuração do banco de dados SQLite em um arquivo
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///jogo_seguranca.db'
+
+    # Configurações adicionais para construção de URLs
+    app.config['SERVER_NAME'] = 'localhost:8000'  # Altere para o host e a porta do seu servidor
+    app.config['APPLICATION_ROOT'] = '/'
+    app.config['PREFERRED_URL_SCHEME'] = 'http'
     
     # Initialize the database with the app
     db.init_app(app)
