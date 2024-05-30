@@ -1,20 +1,15 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from flask_sqlalchemy import SQLAlchemy
-import os
 
 # Initialize the database object globally
 db = SQLAlchemy()
-sqlalchemy_database_uri = os.getenv('SQLALCHEMY_DATABASE_URI')
 
 def create_app():
     app = Flask(__name__)
     app.secret_key = 'supersecretkey'
     
-    # Configuração do banco de dados
-    if sqlalchemy_database_uri is None:
-        print("A variável de ambiente SQLALCHEMY_DATABASE_URI não está definida.")
-    else:  
-        app.config['SQLALCHEMY_DATABASE_URI'] = sqlalchemy_database_uri
+    # Configuração do banco de dados SQLite em um arquivo
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///jogo_seguranca.db'
     
     # Initialize the database with the app
     db.init_app(app)
