@@ -3,11 +3,6 @@ from flask import Flask, render_template, redirect, request, url_for, session
 app = Flask(__name__)
 app.secret_key = 'supersecretkey'
 
-# Configurações adicionais para construção de URLs
-app.config['SERVER_NAME'] = '0.0.0.0:8000'  # Altere para o host e a porta do seu servidor
-app.config['APPLICATION_ROOT'] = '/'
-app.config['PREFERRED_URL_SCHEME'] = 'http'
-
 # Lista de cenários
 cenarios = [
     {
