@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  #phone {
+    background-color: #333;
+    width: 360px; /* Largura do celular */
+    height: 640px; /* Altura do celular */
+    margin: 50px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Sombra para efeito 3D */
+  }
+  
+  #screen {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: auto;
+  }
+  
