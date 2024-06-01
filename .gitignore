@@ -1,2 +1,2 @@
-envaventura/*
-pyvenv.cfg
+venv/*
+__pycache__/*
