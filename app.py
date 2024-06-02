@@ -1,6 +1,10 @@
 from flask import Flask, render_template, redirect, request, url_for, session
 
+from flask_talisman import Talisman
+
 app = Flask(__name__)
+Talisman(app)
+
 app.secret_key = 'supersecretkey'
 
 # Lista de cenários
@@ -18,6 +22,12 @@ cenarios = [
         'correto': 0
     }
 ]
+
+@app.before_request
+def before_request():
+    if not request.is_secure:
+        url = request.url.replace("http://", "https://", 1)
+        return redirect(url, code=301)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
