@@ -1,11 +1,13 @@
 from flask import Flask, render_template, redirect, request, url_for, session
-
 from flask_talisman import Talisman
+import os
 
 app = Flask(__name__)
-Talisman(app)
 
-app.secret_key = 'supersecretkey'
+app.secret_key = os.urandom(24)
+
+if 'DYNO' in os.environ:  
+    Talisman(app)
 
 # Lista de cenários
 cenarios = [
@@ -23,13 +25,8 @@ cenarios = [
     }
 ]
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET'])
 def index():
-    if request.method == 'POST':
-        session['score'] = 0
-        session['lives'] = 3
-        session['current_scenario'] = 0
-        return redirect(url_for('game'))
     return render_template('index.html')
 
 @app.route('/game', methods=['GET', 'POST'])
