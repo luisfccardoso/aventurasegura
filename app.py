@@ -34,8 +34,13 @@ cenarios = [
     }
 ]
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
+    if request.method == 'POST':
+        session['score'] = 0
+        session['lives'] = 3
+        session['current_scenario'] = 0
+        return redirect(url_for('game'))
     return render_template('index.html')
 
 @app.route('/game', methods=['GET', 'POST'])
