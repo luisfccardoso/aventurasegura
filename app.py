@@ -2,12 +2,21 @@ from flask import Flask, render_template, redirect, request, url_for, session
 from flask_talisman import Talisman
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 
 app.secret_key = os.urandom(24)
 
 if 'DYNO' in os.environ:  
-    Talisman(app)
+    Talisman(app, content_security_policy={
+        'default-src': [
+            '\'self\'',
+            'stackpath.bootstrapcdn.com',  # Permita fontes externas, se necessário
+        ],
+        'style-src': [
+            '\'self\'',
+            'stackpath.bootstrapcdn.com',
+        ],
+    })
 
 # Lista de cenários
 cenarios = [
