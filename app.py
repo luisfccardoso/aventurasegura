@@ -1,30 +1,11 @@
 import time
 from flask import Flask, render_template, redirect, request, url_for, session
-from flask_talisman import Talisman
 import os
 import json
 
 app = Flask(__name__, static_folder='static')
 
 app.secret_key = os.urandom(24)
-
-if 'DYNO' in os.environ:
-    Talisman(app, content_security_policy={
-        'style-src': [
-            '\'self\'',
-            'stackpath.bootstrapcdn.com', 
-        ],
-        'default-src': [
-            '\'self\'',
-            'stackpath.bootstrapcdn.com',
-            'www.googletagmanager.com', 
-        ],
-        'script-src': [
-            '\'self\'',
-            'stackpath.bootstrapcdn.com',
-            'www.googletagmanager.com'
-        ]
-    })
 
 with open(os.path.join(app.static_folder + '/json', 'cenarios.json'), 'r', encoding='utf-8') as f:
     cenarios = json.load(f)
