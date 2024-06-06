@@ -9,6 +9,8 @@
         <button type="submit" name="option" value="left" class="btn btn-primary" style="margin: 10px">{{ scenario.left_choice_text }}</button>
         <button type="submit" name="option" value="right" class="btn btn-primary">{{ scenario.right_choice_text }}</button>
     </form>
-    <p>Pontuação: {{ score }}</p> 
+    <p>Informações adicionais: {{ scenario.information }}</p>
+    <a href="{{ scenario.saiba_mais }}">Saiba Mais</a>
+    <div class="score">Pontuação: {{ score }}</div>
 </div>
 {% endblock %}
