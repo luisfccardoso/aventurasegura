@@ -28,6 +28,7 @@ def index():
     if request.method == 'POST':
         session['score'] = 0
         session['current_scenario'] = 0
+        time.sleep(1)
         return redirect(url_for('jogo'))
     return render_template('index.html')
 
@@ -37,7 +38,7 @@ def jogo():
             return redirect(url_for('index'))
     
     scenario = cenarios[session['current_scenario']]
-
+    time.sleep(1)
     if request.method == 'POST':
         
         selected_option = request.form['option']
