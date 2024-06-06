@@ -9,18 +9,7 @@ app = Flask(__name__, static_folder='static')
 app.secret_key = os.urandom(24)
 
 if 'DYNO' in os.environ:
-    Talisman(app, content_security_policy={
-        'style-src': [
-            '\'self\'',
-            'stackpath.bootstrapcdn.com',
-            'www.googletagmanager.com', 
-        ],
-        'default-src': [
-            '\'self\'',
-            'stackpath.bootstrapcdn.com',
-            'www.googletagmanager.com', 
-        ]
-    })
+    Talisman(app)
 
 with open(os.path.join(app.static_folder + '/json', 'cenarios.json'), 'r', encoding='utf-8') as f:
     cenarios = json.load(f)
