@@ -13,11 +13,12 @@ if 'DYNO' in os.environ:
         'style-src': [
             '\'self\'',
             'stackpath.bootstrapcdn.com',
+            'www.googletagmanager.com', 
         ],
         'default-src': [
-        '\'self\'',
-        'stackpath.bootstrapcdn.com',
-        'www.googletagmanager.com', 
+            '\'self\'',
+            'stackpath.bootstrapcdn.com',
+            'www.googletagmanager.com', 
         ]
     })
 
