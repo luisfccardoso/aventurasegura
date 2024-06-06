@@ -13,6 +13,7 @@ with open(os.path.join(app.static_folder + '/json', 'cenarios.json'), 'r', encod
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
+        session.clear()
         session['score'] = 0
         session['current_scenario'] = 0
         session['len'] = len(cenarios)
@@ -22,33 +23,23 @@ def index():
 @app.route('/jogo', methods=['GET', 'POST'])
 def jogo():
 
-    if 'score' not in session:
+    if not all(key in session for key in ['score', 'current_scenario', 'len_cenarios']):
         return redirect(url_for('index'))
     
-    scenario = cenarios[session['current_scenario']]
+    current_scenario = session['current_scenario']
+    if current_scenario >= session['len_cenarios']:
+        return redirect(url_for('fim'))
+
+    scenario = cenarios[current_scenario]
 
     if request.method == 'POST':
-        
         selected_option = request.form['option']
-        if selected_option == 'left':
-            impact = scenario['left_choice_impact']
-        else:
-            impact = scenario['right_choice_impact']
-
+        impact = scenario.get(selected_option + '_choice_impact', {})
         session['score'] += sum(impact.values())
         session['current_scenario'] += 1
+        return redirect(url_for('jogo'))
 
-        if session['current_scenario'] >= len(cenarios):
-            final_score = session['score']
-            session.clear()
-            return render_template('fim.html', score=final_score)
-
-    if session['current_scenario'] < len(cenarios):
-        return render_template('jogo.html', scenario=scenario, score=session['score'])
-    else:
-        final_score = session['score']
-        session.clear()
-        return render_template('fim.html', score=final_score)
+    return render_template('jogo.html', scenario=scenario, score=session['score'])
 
 @app.route('/fim')
 def fim():
