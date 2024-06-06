@@ -5,7 +5,7 @@ import json
 
 app = Flask(__name__, static_folder='static')
 
-app.secret_key = os.urandom(24)
+app.secret_key = "sdsdsadasdsadsadsada"
 
 if 'DYNO' in os.environ:
     Talisman(app, content_security_policy={
