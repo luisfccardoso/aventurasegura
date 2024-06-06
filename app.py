@@ -7,11 +7,12 @@ app = Flask(__name__, static_folder='static')
 
 app.secret_key = os.urandom(24)
 
-if 'DYNO' in os.environ:  
+# Configurar Talisman se estiver no Heroku
+if 'DYNO' in os.environ:
     Talisman(app, content_security_policy={
         'default-src': [
             '\'self\'',
-            'stackpath.bootstrapcdn.com', 
+            'stackpath.bootstrapcdn.com',
         ],
         'style-src': [
             '\'self\'',
@@ -19,61 +20,55 @@ if 'DYNO' in os.environ:
         ],
     })
 
-def carregar_cenarios():
-    with open(os.path.join(app.static_folder + "/json/", 'cenarios.json'), 'r', encoding='utf-8') as f:
-        return json.load(f)
+# Carregar cenários do arquivo JSON
+with open(os.path.join(app.static_folder, 'cenarios.json'), 'r', encoding='utf-8') as f:
+    cenarios = json.load(f)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         session['score'] = 0
-        session['lives'] = 3
         session['current_scenario'] = 0
-        return redirect(url_for('jogo'))
+        return redirect(url_for('game'))
     return render_template('index.html')
 
-@app.route('/jogo', methods=['GET', 'POST'])
-def jogo():
+@app.route('/game', methods=['GET', 'POST'])
+def game():
     if 'score' not in session:
         return redirect(url_for('index'))
-
-    cenarios = carregar_cenarios()
 
     if request.method == 'POST':
         selected_option = request.form['option']
         scenario = cenarios[session['current_scenario']]
-        if selected_option == 'left' and scenario['left_choice_impact']:
-            session['score'] += scenario['left_choice_impact'].get('reputacao', 0)
-            session['score'] += scenario['left_choice_impact'].get('seguranca', 0)
-            session['score'] += scenario['left_choice_impact'].get('conhecimento', 0)
-        elif selected_option == 'right' and scenario['right_choice_impact']:
-            session['score'] += scenario['right_choice_impact'].get('reputacao', 0)
-            session['score'] += scenario['right_choice_impact'].get('seguranca', 0)
-            session['score'] += scenario['right_choice_impact'].get('conhecimento', 0)
+        if selected_option == 'left':
+            impact = scenario['left_choice_impact']
+        else:
+            impact = scenario['right_choice_impact']
 
+        session['score'] += sum(impact.values())
         session['current_scenario'] += 1
 
         if session['current_scenario'] >= len(cenarios):
             final_score = session['score']
             session.clear()
-            return render_template('fim.html', score=final_score)
+            return render_template('end.html', score=final_score)
 
     if session['current_scenario'] < len(cenarios):
         scenario = cenarios[session['current_scenario']]
-        return render_template('jogo.html', scenario=scenario, score=session['score'])
+        return render_template('game.html', scenario=scenario, score=session['score'])
     else:
         final_score = session['score']
         session.clear()
-        return render_template('fim.html', score=final_score)
+        return render_template('end.html', score=final_score)
 
-@app.route('/fim')
-def fim():
+@app.route('/end')
+def end():
     if 'score' not in session:
         return redirect(url_for('index'))
 
     final_score = session['score']
     session.clear()
-    return render_template('fim.html', score=final_score)
+    return render_template('end.html', score=final_score)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
