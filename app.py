@@ -28,18 +28,17 @@ def index():
     if request.method == 'POST':
         session['score'] = 0
         session['current_scenario'] = 0
+        session['len'] = len(cenarios)
         time.sleep(1)
         return redirect(url_for('jogo'))
     return render_template('index.html')
 
 @app.route('/jogo', methods=['GET', 'POST'])
 def jogo():
-    time.sleep(1)
     if 'score' not in session:
             return redirect(url_for('index'))
     
     scenario = cenarios[session['current_scenario']]
-    time.sleep(1)
     if request.method == 'POST':
         
         selected_option = request.form['option']
@@ -51,12 +50,12 @@ def jogo():
         session['score'] += sum(impact.values())
         session['current_scenario'] += 1
 
-        if session['current_scenario'] >= len(cenarios):
+        if session['current_scenario'] >= session['len']:
             final_score = session['score']
             session.clear()
             return render_template('end.html', score=final_score)
-    time.sleep(1)
-    if session['current_scenario'] < len(cenarios):
+
+    if session['current_scenario'] < session['len']:
         return render_template('jogo.html', scenario=scenario, score=session['score'])
     else:
         final_score = session['score']
