@@ -29,14 +29,13 @@ def index():
         session['score'] = 0
         session['current_scenario'] = 0
         session['len'] = len(cenarios)
-        time.sleep(1)
         return redirect(url_for('jogo'))
     return render_template('index.html')
 
 @app.route('/jogo', methods=['GET', 'POST'])
 def jogo():
     if 'score' not in session:
-            return redirect(url_for('index'))
+        return redirect(url_for('index'), code=302)
     
     scenario = cenarios[session['current_scenario']]
     if request.method == 'POST':
@@ -50,26 +49,26 @@ def jogo():
         session['score'] += sum(impact.values())
         session['current_scenario'] += 1
 
-        if session['current_scenario'] >= session['len']:
+        if session['current_scenario'] >= len(cenarios):
             final_score = session['score']
             session.clear()
-            return render_template('end.html', score=final_score)
+            return render_template('fim.html', score=final_score)
 
-    if session['current_scenario'] < session['len']:
+    if session['current_scenario'] < len(cenarios):
         return render_template('jogo.html', scenario=scenario, score=session['score'])
     else:
         final_score = session['score']
         session.clear()
-        return render_template('end.html', score=final_score)
+        return render_template('fim.html', score=final_score)
 
-@app.route('/end')
-def end():
+@app.route('/fim')
+def fim():
     if 'score' not in session:
         return redirect(url_for('index'))
 
     final_score = session['score']
     session.clear()
-    return render_template('end.html', score=final_score)
+    return render_template('fim.html', score=final_score)
 
 if __name__ == '__main__':
     app.run()
