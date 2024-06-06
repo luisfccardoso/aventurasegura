@@ -11,12 +11,14 @@ if 'DYNO' in os.environ:
     Talisman(app, content_security_policy={
         'style-src': [
             '\'self\'',
-            'stackpath.bootstrapcdn.com', 
+            'stackpath.bootstrapcdn.com',
+            'unsafe-inline',  # Use com cautela, se necessário
         ],
         'default-src': [
             '\'self\'',
             'stackpath.bootstrapcdn.com',
-            'www.googletagmanager.com', 
+            'www.googletagmanager.com',
+            'unsafe-inline',  # Use com cautela, se necessário
         ],
         'script-src': [
             '\'self\'',
