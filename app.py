@@ -1,3 +1,4 @@
+import time
 from flask import Flask, render_template, redirect, request, url_for, session
 from flask_talisman import Talisman
 import os
@@ -32,10 +33,13 @@ def index():
 
 @app.route('/jogo', methods=['GET', 'POST'])
 def jogo():
+    if 'score' not in session:
+        return redirect(url_for('index'))
+
+    scenario = cenarios[session['current_scenario']]
 
     if request.method == 'POST':
         selected_option = request.form['option']
-        scenario = cenarios[session['current_scenario']]
         if selected_option == 'left':
             impact = scenario['left_choice_impact']
         else:
@@ -50,7 +54,7 @@ def jogo():
             return render_template('end.html', score=final_score)
 
     if session['current_scenario'] < len(cenarios):
-        scenario = cenarios[session['current_scenario']]
+        time.sleep(1)
         return render_template('jogo.html', scenario=scenario, score=session['score'])
     else:
         final_score = session['score']
