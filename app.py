@@ -7,20 +7,9 @@ app = Flask(__name__, static_folder='static')
 
 app.secret_key = os.urandom(24)
 
-# Configurar Talisman se estiver no Heroku
 if 'DYNO' in os.environ:
-    Talisman(app, content_security_policy={
-        'default-src': [
-            '\'self\'',
-            'stackpath.bootstrapcdn.com',
-        ],
-        'style-src': [
-            '\'self\'',
-            'stackpath.bootstrapcdn.com',
-        ],
-    })
+    Talisman(app)
 
-# Carregar cenários do arquivo JSON
 with open(os.path.join(app.static_folder + '/json', 'cenarios.json'), 'r', encoding='utf-8') as f:
     cenarios = json.load(f)
 
