@@ -1,0 +1,94 @@
+[
+  {
+    "personagem": "O Nerd Tecnológico",
+    "imagem": "nerd_tecnologico.jpeg",
+    "text": "Seu amigo nerd te mostra um novo app que promete deixar você invisível online. Você...",
+    "left_choice_text": "Testa o app com ele, afinal, ele manja muito de tecnologia.",
+    "right_choice_text": "Desconfia e pesquisa sobre o app antes de usar.",
+    "left_choice_impact": { "reputacao": -5, "seguranca": -10 },
+    "right_choice_impact": { "reputacao": 5, "conhecimento": 10 },
+    "left_choice_consequence": "O app era uma furada e seus dados foram roubados! Que mancada...",
+    "right_choice_consequence": "Você descobre que o app é falso e alerta seu amigo. Ele te agradece por salvá-lo de um problema.",
+    "information": "Nem tudo que parece legal na internet é seguro. Sempre pesquise antes de baixar ou usar algo novo.",
+    "saiba_mais": "https://internetsegura.br/dicas/aplicativos-seguros/"
+  },
+  {
+    "personagem": "O Nerd Tecnológico",
+    "imagem": "nerd_tecnologico.jpeg",
+    "text": "Seu amigo nerd te desafia a invadir o sistema da escola 'só de brincadeira'. Você...",
+    "left_choice_text": "Aceita o desafio, afinal, é só uma brincadeira.",
+    "right_choice_text": "Explica que invadir sistemas é crime e pode ter consequências sérias.",
+    "left_choice_impact": { "reputacao": -20, "seguranca": -15 },
+    "right_choice_impact": { "reputacao": 10, "amizade": 5 },
+    "left_choice_consequence": "Vocês são pegos e se metem em sérios problemas com a escola e a polícia.",
+    "right_choice_consequence": "Seu amigo entende o perigo e desiste da ideia. Vocês encontram outra forma de se divertir.",
+    "information": "Hackear é crime! Mesmo que seja 'só de brincadeira', pode ter consequências graves.",
+    "saiba_mais": "https://cartilha.cert.br/livro/cartilha-seguranca-internet.pdf"
+  },
+  {
+    "personagem": "O Nerd Tecnológico",
+    "imagem": "nerd_tecnologico.jpeg",
+    "text": "Seu amigo nerd te convida para investir em uma nova criptomoeda que promete te deixar rico. Você...",
+    "left_choice_text": "Investe todas as suas economias, afinal, ele entende dessas coisas.",
+    "right_choice_text": "Pesquisa sobre a criptomoeda e os riscos envolvidos antes de tomar uma decisão.",
+    "left_choice_impact": { "financas": -50, "amizade": -10 },
+    "right_choice_impact": { "conhecimento": 10, "financas": 5 },
+    "left_choice_consequence": "A criptomoeda era uma farsa e você perde todo o seu dinheiro.",
+    "right_choice_consequence": "Você descobre que o investimento é muito arriscado e decide não entrar nessa.",
+    "information": "Criptomoedas são investimentos de alto risco. Pesquise e consulte especialistas antes de investir.",
+    "saiba_mais": "https://www.bcb.gov.br/detalhamento/comunicados-do-bcb/comum/2021/COMBCB231_v1_P.pdf"
+  },
+  {
+    "personagem": "O Desligado Digital",
+    "imagem": "desligado_digital.jpeg",
+    "text": "Seu avô te pede ajuda para criar um perfil em uma rede social. Você...",
+    "left_choice_text": "Cria o perfil para ele com uma senha fácil de lembrar.",
+    "right_choice_text": "Ensina ele a criar o perfil e a escolher uma senha forte.",
+    "left_choice_impact": { "seguranca": -10, "amizade": 5 },
+    "right_choice_impact": { "seguranca": 10, "conhecimento": 5 },
+    "left_choice_consequence": "A conta do seu avô é invadida por alguém que usou a senha fácil.",
+    "right_choice_consequence": "Seu avô aprende a usar a rede social com segurança e te agradece pela paciência.",
+    "information": "Ajude as pessoas que não entendem muito de internet a se protegerem.",
+    "saiba_mais": "https://internetsegura.br/dicas/seguranca-para-idosos/"
+  },
+  {
+    "personagem": "O Desligado Digital",
+    "imagem": "desligado_digital.jpeg",
+    "text": "Sua tia quer comprar um produto em um site desconhecido. Você...",
+    "left_choice_text": "Diz para ela ir em frente, afinal, o preço está ótimo.",
+    "right_choice_text": "Pesquisa sobre a reputação do site e verifica se ele é seguro.",
+    "left_choice_impact": { "financas": -20, "reputacao": -5 },
+    "right_choice_impact": { "reputacao": 10, "conhecimento": 5 },
+    "left_choice_consequence": "Sua tia cai em um golpe e perde dinheiro.",
+    "right_choice_consequence": "Você encontra avaliações negativas do site e alerta sua tia, que te agradece por evitar um problema.",
+    "information": "Antes de comprar online, pesquise sobre a reputação da loja e verifique se o site é seguro (https).",
+    "saiba_mais": "https://internetsegura.br/dicas/compras-seguras/"
+  },
+  {
+    "personagem": "O Desligado Digital",
+    "imagem": "desligado_digital.jpeg",
+    "text": "Seu pai te envia uma notícia bombástica pelo WhatsApp, mas você acha que é falsa. Você...",
+    "left_choice_text": "Acredita na notícia e a compartilha com seus amigos.",
+    "right_choice_text": "Verifica a notícia em sites confiáveis antes de compartilhar.",
+    "left_choice_impact": { "reputacao": -10, "conhecimento": -5 },
+    "right_choice_impact": { "reputacao": 10, "conhecimento": 10 },
+    "left_choice_consequence": "Você espalha uma notícia falsa e sua reputação fica prejudicada.",
+    "right_choice_consequence": "Você descobre que a notícia é falsa e alerta seu pai sobre o perigo das fake news.",
+    "information": "Nem tudo que você lê na internet é verdade. Verifique as informações em fontes confiáveis antes de acreditar e compartilhar.",
+    "saiba_mais": "https://internetsegura.br/fake-news/"
+  },
+  {
+    "personagem": "O Viciado em Redes Sociais",
+    "imagem": "viciado_redes_sociais.jpeg",
+    "text": "Sua amiga posta fotos de tudo o que faz, até mesmo informações pessoais. Você...",
+    "left_choice_text": "Fala para ela tomar cuidado com o que compartilha online.",
+    "right_choice_text": "Mostra para ela exemplos de como informações pessoais podem ser usadas por pessoas mal-intencionadas.",
+    "left_choice_impact": { "amizade": -5, "reputacao": 5 },
+    "right_choice_impact": { "amizade": 5, "reputacao": 10 },
+    "left_choice_consequence": "Ela fica chateada com você, mas depois percebe que você estava certo.",
+    "right_choice_consequence": "Ela te agradece pelo alerta e começa a ser mais cuidadosa com suas informações.",
+    "information": "Compartilhar informações pessoais online pode ser perigoso. Pense bem antes de postar!",
+    "saiba_mais": "https://internetsegura.br/dicas/privacidade-na-internet/"
+  }
+]
+  
