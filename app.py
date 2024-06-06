@@ -29,11 +29,11 @@ def index():
     if request.method == 'POST':
         session['score'] = 0
         session['current_scenario'] = 0
-        return redirect(url_for('game'))
+        return redirect(url_for('jogo'))
     return render_template('index.html')
 
-@app.route('/game', methods=['GET', 'POST'])
-def game():
+@app.route('/jogo', methods=['GET', 'POST'])
+def jogo():
     if 'score' not in session:
         return redirect(url_for('index'))
 
@@ -55,7 +55,7 @@ def game():
 
     if session['current_scenario'] < len(cenarios):
         scenario = cenarios[session['current_scenario']]
-        return render_template('game.html', scenario=scenario, score=session['score'])
+        return render_template('jogo.html', scenario=scenario, score=session['score'])
     else:
         final_score = session['score']
         session.clear()
