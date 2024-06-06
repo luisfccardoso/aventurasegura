@@ -10,14 +10,15 @@ app.secret_key = os.urandom(24)
 
 if 'DYNO' in os.environ:
     Talisman(app, content_security_policy={
-        'default-src': [
-            '\'self\'',
-            'stackpath.bootstrapcdn.com',
-        ],
         'style-src': [
             '\'self\'',
             'stackpath.bootstrapcdn.com',
         ],
+        'default-src': [
+        '\'self\'',
+        'stackpath.bootstrapcdn.com',
+        'www.googletagmanager.com', 
+        ]
     })
 
 with open(os.path.join(app.static_folder + '/json', 'cenarios.json'), 'r', encoding='utf-8') as f:
