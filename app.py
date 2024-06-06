@@ -16,20 +16,18 @@ def index():
         session.clear()
         session['score'] = 0
         session['current_scenario'] = 0
-        session['len'] = len(cenarios)
         return redirect(url_for('jogo'))
     return render_template('index.html')
 
 @app.route('/jogo', methods=['GET', 'POST'])
 def jogo():
 
-    if not all(key in session for key in ['score', 'current_scenario', 'len_cenarios']):
+    if 'score' not in session:
         return redirect(url_for('index'))
     
     current_scenario = session['current_scenario']
-    if current_scenario >= session['len_cenarios']:
+    if current_scenario >= len(cenarios):
         return redirect(url_for('fim'))
-
     scenario = cenarios[current_scenario]
 
     if request.method == 'POST':
