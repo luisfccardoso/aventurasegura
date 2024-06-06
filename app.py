@@ -34,6 +34,7 @@ def index():
 
 @app.route('/jogo', methods=['GET', 'POST'])
 def jogo():
+    time.sleep(1)
     if 'score' not in session:
             return redirect(url_for('index'))
     
