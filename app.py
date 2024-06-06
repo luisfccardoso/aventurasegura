@@ -21,11 +21,12 @@ def index():
 
 @app.route('/jogo', methods=['GET', 'POST'])
 def jogo():
-    scenario = cenarios[session['current_scenario']]
 
     if 'score' not in session:
         return redirect(url_for('index'))
     
+    scenario = cenarios[session['current_scenario']]
+
     if request.method == 'POST':
         
         selected_option = request.form['option']
