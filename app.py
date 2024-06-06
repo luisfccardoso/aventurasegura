@@ -12,19 +12,18 @@ if 'DYNO' in os.environ:
         'style-src': [
             '\'self\'',
             'stackpath.bootstrapcdn.com',
-            'unsafe-inline',  # Use com cautela, se necessário
         ],
         'default-src': [
             '\'self\'',
             'stackpath.bootstrapcdn.com',
             'www.googletagmanager.com',
-            'unsafe-inline',  # Use com cautela, se necessário
         ],
         'script-src': [
             '\'self\'',
             'stackpath.bootstrapcdn.com',
             'www.googletagmanager.com',
-            'unsafe-inline',  # Use com cautela, se necessário
+            'code.jquery.com',
+            'cdn.jsdelivr.net'
         ]
     })
 
