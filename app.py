@@ -21,7 +21,7 @@ if 'DYNO' in os.environ:
     })
 
 # Carregar cenários do arquivo JSON
-with open(os.path.join(app.static_folder, 'cenarios.json'), 'r', encoding='utf-8') as f:
+with open(os.path.join(app.static_folder + '/json', 'cenarios.json'), 'r', encoding='utf-8') as f:
     cenarios = json.load(f)
 
 @app.route('/', methods=['GET', 'POST'])
