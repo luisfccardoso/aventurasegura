@@ -34,11 +34,12 @@ def index():
 @app.route('/jogo', methods=['GET', 'POST'])
 def jogo():
     if 'score' not in session:
-        return redirect(url_for('index'))
-
+            return redirect(url_for('index'))
+    
     scenario = cenarios[session['current_scenario']]
 
     if request.method == 'POST':
+        
         selected_option = request.form['option']
         if selected_option == 'left':
             impact = scenario['left_choice_impact']
@@ -52,9 +53,8 @@ def jogo():
             final_score = session['score']
             session.clear()
             return render_template('end.html', score=final_score)
-
+    time.sleep(1)
     if session['current_scenario'] < len(cenarios):
-        time.sleep(1)
         return render_template('jogo.html', scenario=scenario, score=session['score'])
     else:
         final_score = session['score']
