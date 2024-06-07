@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="area">
+    <h1>Fim de Jogo</h1>
+    <p>Sua pontuação final é: {{ score }}</p>
+    <a href="{{ url_for('index') }}" class="btn btn-primary">Jogar novamente</a>
+</div>
+{% endblock %}
