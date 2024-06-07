@@ -13,11 +13,6 @@ if 'DYNO' in os.environ:
             '\'self\'',
             'stackpath.bootstrapcdn.com',
         ],
-        'default-src': [
-            '\'self\'',
-            'stackpath.bootstrapcdn.com',
-            'www.googletagmanager.com',
-        ],
         'script-src': [
             '\'self\'',
             'stackpath.bootstrapcdn.com',
