@@ -12,6 +12,9 @@ if 'DYNO' in os.environ:
         'style-src': [
             '\'self\'',
             'stackpath.bootstrapcdn.com',
+            'ajax.googleapis.com', 
+            'fonts.googleapis.com',
+            '*.gstatic.com'
         ],
         'script-src': [
             '\'self\'',
@@ -19,6 +22,23 @@ if 'DYNO' in os.environ:
             'www.googletagmanager.com',
             'code.jquery.com',
             'cdn.jsdelivr.net'
+            'ajax.googleapis.com', 
+            '*.googleanalytics.com ',
+            '*.google-analytics.com'
+        ],
+        'default-src': [
+            '\'self\'',
+            '*.gstatic.com'
+        ],
+        'font-src': [
+            '\'self\'', 
+            'themes.googleusercontent.com', 
+            '*.gstatic.com'
+        ],
+        'frame-src': [
+            '\'self\'', 
+            'www.google.com',
+            'www.youtube.com'
         ]
     })
 
