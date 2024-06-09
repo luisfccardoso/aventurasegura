@@ -23,7 +23,7 @@ def add_nonce(response):
             f"script-src 'self' 'nonce-{g.nonce}' www.googletagmanager.com www.google-analytics.com; "
             "img-src 'self' www.google-analytics.com; "
             "connect-src 'self' www.google-analytics.com; "
-            "style-src 'self' 'unsafe-inline';"
+            "style-src 'self' 'unsafe-inline' stackpath.bootstrapcdn.com; "
         )
         response.headers['Content-Security-Policy'] = csp
     return response
