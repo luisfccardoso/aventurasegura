@@ -8,44 +8,41 @@ app = Flask(__name__, static_folder='static')
 
 app.secret_key = "AHGDbfsajry4233dskdnmduh1232443dsajdjasjHJD"
 
-# Function to generate a nonce
 def generate_nonce():
     return base64.b64encode(os.urandom(16)).decode('utf-8')
 
 @app.before_request
 def set_nonce():
-    # Set a nonce for each request
     g.nonce = generate_nonce()
 
 @app.after_request
 def add_nonce(response):
-    # Add the nonce to the script-src directive
-    response.headers['Content-Security-Policy'] += f"; script-src 'self' 'nonce-{g.nonce}' www.googletagmanager.com www.google-analytics.com"
+    if hasattr(g, 'nonce'):
+        csp = (
+            "default-src 'self'; "
+            f"script-src 'self' 'nonce-{g.nonce}' www.googletagmanager.com www.google-analytics.com; "
+            "img-src 'self' www.google-analytics.com; "
+            "connect-src 'self' www.google-analytics.com; "
+            "style-src 'self' 'unsafe-inline';"
+        )
+        response.headers['Content-Security-Policy'] = csp
     return response
 
 if 'DYNO' in os.environ:
-    Talisman(app, content_security_policy=
-        {
-            'default-src': ["'self'"],
-            'script-src': ["'self'", 'www.googletagmanager.com', 'www.google-analytics.com'],
-            'img-src': ["'self'", 'www.google-analytics.com'],
-            'connect-src': ["'self'", 'www.google-analytics.com'],
-            'style-src': ["'self'", "'unsafe-inline'"]
-        }
-    )
+    Talisman(app, content_security_policy=None)
 
 with open(os.path.join(app.static_folder + '/json', 'cenarios.json'), 'r', encoding='utf-8') as f:
     cenarios = json.load(f)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    nonce = g.nonce
+    nonce = g.get('nonce', '')
     if request.method == 'POST':
         session['score'] = 0
         session['current_scenario'] = 0
         session['len'] = len(cenarios)
         return redirect(url_for('jogo'))
-    return render_template('index.html')
+    return render_template('index.html', nonce=nonce)
 
 @app.route('/jogo', methods=['GET', 'POST'])
 def jogo():
