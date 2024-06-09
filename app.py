@@ -8,43 +8,15 @@ app = Flask(__name__, static_folder='static')
 app.secret_key = "AHGDbfsajry4233dskdnmduh1232443dsajdjasjHJD"
 
 if 'DYNO' in os.environ:
-    Talisman(app, content_security_policy={
-        'style-src': [
-            '\'self\'',
-            'stackpath.bootstrapcdn.com',
-            'ajax.googleapis.com', 
-            'fonts.googleapis.com',
-            '*.gstatic.com'
-        ],
-        'script-src': [
-            '\'self\'',
-            'stackpath.bootstrapcdn.com',
-            'www.googletagmanager.com',
-            'code.jquery.com',
-            'cdn.jsdelivr.net',
-            'ajax.googleapis.com', 
-            '*.googleanalytics.com ',
-            '*.google-analytics.com'
-        ],
-        'default-src': [
-            '\'self\'',
-            '*.gstatic.com',
-            'ajax.googleapis.com', 
-            '*.googleanalytics.com ',
-            '*.google-analytics.com'
-            
-        ],
-        'font-src': [
-            '\'self\'', 
-            'themes.googleusercontent.com', 
-            '*.gstatic.com'
-        ],
-        'frame-src': [
-            '\'self\'', 
-            'www.google.com',
-            'www.youtube.com'
-        ]
-    })
+    Talisman(app, content_security_policy=
+        {
+            'default-src': ["'self'"],
+            'script-src': ["'self'", 'www.googletagmanager.com', 'www.google-analytics.com'],
+            'img-src': ["'self'", 'www.google-analytics.com'],
+            'connect-src': ["'self'", 'www.google-analytics.com'],
+            'style-src': ["'self'", "'unsafe-inline'"]
+        }
+    )
 
 with open(os.path.join(app.static_folder + '/json', 'cenarios.json'), 'r', encoding='utf-8') as f:
     cenarios = json.load(f)
