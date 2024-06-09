@@ -1,4 +1,5 @@
-from flask import Flask, render_template, redirect, request, url_for, session
+import base64
+from flask import Flask, g, render_template, redirect, request, url_for, session
 from flask_talisman import Talisman
 import os
 import json
@@ -6,6 +7,21 @@ import json
 app = Flask(__name__, static_folder='static')
 
 app.secret_key = "AHGDbfsajry4233dskdnmduh1232443dsajdjasjHJD"
+
+# Function to generate a nonce
+def generate_nonce():
+    return base64.b64encode(os.urandom(16)).decode('utf-8')
+
+@app.before_request
+def set_nonce():
+    # Set a nonce for each request
+    g.nonce = generate_nonce()
+
+@app.after_request
+def add_nonce(response):
+    # Add the nonce to the script-src directive
+    response.headers['Content-Security-Policy'] += f"; script-src 'self' 'nonce-{g.nonce}' www.googletagmanager.com www.google-analytics.com"
+    return response
 
 if 'DYNO' in os.environ:
     Talisman(app, content_security_policy=
@@ -23,6 +39,7 @@ with open(os.path.join(app.static_folder + '/json', 'cenarios.json'), 'r', encod
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    nonce = g.nonce
     if request.method == 'POST':
         session['score'] = 0
         session['current_scenario'] = 0
