@@ -29,6 +29,12 @@
 
         gtag('js', new Date());
         gtag('config', 'G-XMG8KFD0CB');
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
 </script>
 </head>
 <body>
@@ -36,7 +42,7 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WGZDVQJN"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-     
+
     {% block content %}
     {% endblock %}
     
