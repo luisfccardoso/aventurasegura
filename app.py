@@ -21,14 +21,17 @@ if 'DYNO' in os.environ:
             'stackpath.bootstrapcdn.com',
             'www.googletagmanager.com',
             'code.jquery.com',
-            'cdn.jsdelivr.net'
+            'cdn.jsdelivr.net',
             'ajax.googleapis.com', 
             '*.googleanalytics.com ',
             '*.google-analytics.com'
         ],
         'default-src': [
             '\'self\'',
-            '*.gstatic.com'
+            '*.gstatic.com',
+            'ajax.googleapis.com', 
+            '*.googleanalytics.com ',
+            '*.google-analytics.com'
         ],
         'font-src': [
             '\'self\'', 
