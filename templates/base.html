@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'sha256-K5DwWxN+hE9RT4WBaEov/5JQ2vHBGUHpTct4hN83zvc='">
     
     <title>{% block title %}Aventura Segura{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'sha256-K5DwWxN+hE9RT4WBaEov/5JQ2vHBGUHpTct4hN83zvc='">
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
