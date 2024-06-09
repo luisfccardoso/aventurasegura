@@ -32,6 +32,7 @@ if 'DYNO' in os.environ:
             'ajax.googleapis.com', 
             '*.googleanalytics.com ',
             '*.google-analytics.com'
+            
         ],
         'font-src': [
             '\'self\'', 
