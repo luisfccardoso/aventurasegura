@@ -3,7 +3,7 @@
 {% block content %}
 <div class="area">
     <h1>{{ scenario.personagem }}</h1>
-    <!--<img src="{{ url_for('static', filename=scenario.imagem) }}" alt="{{ scenario.personagem }}">-->
+    <img style="display: block; margin-left: auto; margin-right: auto;" width="150px" src="{{ url_for('static', filename=scenario.imagem) }}" alt="{{ scenario.personagem }}">
     <p>{{ scenario.text }}</p>
     <form method="POST">
         <button type="submit" name="option" value="left" class="btn btn-primary" style="margin: 10px">{{ scenario.left_choice_text }}</button>

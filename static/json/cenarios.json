@@ -1,7 +1,7 @@
 [
   {
     "personagem": "O Tecnológico",
-    "imagem": "tecnologico.jpeg",
+    "imagem": "img/tecnologico.jpg",
     "cor_fundo": "#FB4327",
     "text": "Um menino com ar questionador te diz, enquanto aponta para o pinguim desenhado na sua camiseta: 'Então, você se acha especialista em segurança?!",
     "left_choice_text": "Hein?",
@@ -15,7 +15,7 @@
 },
 {
     "personagem": "A Amiga",
-    "imagem": "amiga.jpg",
+    "imagem": "img/amiga.jpg",
     "cor_fundo": "#abdce3",
     "text": "Sua amiga usa '123456' como senha em tudo. Você...",
     "left_choice_text": "Diz que é fácil de adivinhar e ensina a criar uma senha forte.",
@@ -29,7 +29,7 @@
 },
 {
     "personagem": "A Amiga",
-    "imagem": "amiga.jpg",
+    "imagem": "img/amiga.jpg",
     "cor_fundo": "#abdce3",
     "text": "Sua amiga está sendo zoada online. Você...",
     "left_choice_text": "Diz para ela ignorar e bloquear quem está fazendo isso.",
@@ -43,7 +43,7 @@
 },
 {
     "personagem": "A Amiga",
-    "imagem": "amiga.jpg",
+    "imagem": "img/amiga.jpg",
     "cor_fundo": "#abdce3",
     "text": "Sua amiga finalmente criou uma senha super forte, mas usou a mesma em todas as suas contas. Agora, um site que ela usa teve um vazamento de dados e as senhas foram expostas! Você...",
     "left_choice_text": "Explica o risco de usar a mesma senha em vários lugares e sugere um gerenciador de senhas.",
@@ -57,7 +57,7 @@
   },
 {
     "personagem": "Gamer",
-    "imagem": "gamer.jpg",
+    "imagem": "img/gamer.jpg",
     "cor_fundo": "#f89226",
     "text": "Seu amigo passa o dia todo jogando videogame e não quer sair de casa. Você...",
     "left_choice_text": "Propõe atividades divertidas ao ar livre para fazerem juntos.",
@@ -71,7 +71,7 @@
 },
 {
     "personagem": "A mãe",
-    "imagem": "mae2.jpg",
+    "imagem": "img/mae2.jpg",
     "cor_fundo": "f9f3e7",
     "text": "A mãe de um amigo está preocupada com o que ele vê na internet. Você...",
     "left_choice_text": "Ensina a ela como configurar controles parentais no celular e computador.",
@@ -85,7 +85,7 @@
 },
 {
     "personagem": "A professora",
-    "imagem": "professora.jpg",
+    "imagem": "img/professora.jpg",
     "cor_fundo": "f9f3e7",
     "text": "A escola quer fazer uma palestra sobre segurança na internet. Você...",
     "left_choice_text": "Se oferece para dar a palestra e compartilhar seus conhecimentos.",
@@ -99,7 +99,7 @@
 },
 {
   "personagem": "A amiga",
-  "imagem": "amiga.jpg",
+  "imagem": "img/amiga.jpg",
   "cor_fundo": "#abdce3",
   "text": "Seu amigo te mostrou um trabalho incrível sobre a história do Brasil, mas você encontrou o texto idêntico na internet. Você...",
   "left_choice_text": "Dá uma bronca nele por ter colado e não ter citado a fonte.",
@@ -113,7 +113,7 @@
 },
   {
       "personagem": "O Tecnológico",
-      "imagem": "tecnologico.jpeg",
+      "imagem": "img/tecnologico.jpg",
       "cor_fundo": "#FB4327",
       "text": "Seu amigo nerd te mostra um novo app que promete deixar você invisível online. Você...",
       "left_choice_text": "Testa o app com ele, afinal, ele manja muito de tecnologia.",
@@ -127,7 +127,7 @@
   },
   {
       "personagem": "O Tecnológico",
-      "imagem": "tecnologico.jpeg",
+      "imagem": "img/tecnologico.jpg",
       "cor_fundo": "#FB4327",
       "text": "Seu amigo nerd te desafia a invadir o sistema da escola 'só de brincadeira'. Você...",
       "left_choice_text": "Aceita o desafio, afinal, é só uma brincadeira.",
@@ -141,7 +141,7 @@
   },
   {
     "personagem": "O Tecnológico",
-    "imagem": "tecnologico.jpeg",
+    "imagem": "img/tecnologico.jpg",
     "cor_fundo": "#FB4327",
     "text": "Seu amigo nerd te convida para investir em uma nova criptomoeda que promete te deixar rico. Você...",
     "left_choice_text": "Investe todas as suas economias, afinal, ele entende dessas coisas.",
@@ -155,7 +155,7 @@
   },
   {
       "personagem": "O Avô",
-      "imagem": "avo.jpeg",
+      "imagem": "img/avo.jpg",
       "cor_fundo": "#f2efde",
       "text": "Seu avô te pede ajuda para criar um perfil em uma rede social. Você...",
       "left_choice_text": "Cria o perfil para ele com uma senha fácil de lembrar.",
@@ -169,7 +169,7 @@
   },
   {
     "personagem": "A Desligada Digital",
-    "imagem": "professora.jpg",
+    "imagem": "img/professora.jpg",
     "text": "Sua tia quer comprar um produto em um site desconhecido. Você...",
     "left_choice_text": "Diz para ela ir em frente, afinal, o preço está ótimo.",
     "right_choice_text": "Pesquisa sobre a reputação do site e verifica se ele é seguro.",
@@ -182,7 +182,7 @@
   },
   {
     "personagem": "O Avô",
-    "imagem": "avo.jpeg",
+    "imagem": "img/avo.jpg",
     "cor_fundo": "#f2efde",
     "text": "Seu avô te envia uma notícia bombástica pelo WhatsApp, mas você acha que é falsa. Você...",
     "left_choice_text": "Acredita na notícia e a compartilha com seus amigos.",
@@ -196,7 +196,7 @@
   },
   {
     "personagem": "A Social",
-    "imagem": "amiga4.jpeg",
+    "imagem": "img/amiga4.jpg",
     "cor_fundo": "#f2efde",
     "text": "Sua amiga posta fotos de tudo o que faz, até mesmo informações pessoais. Você...",
     "left_choice_text": "Fala para ela tomar cuidado com o que compartilha online.",
