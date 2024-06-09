@@ -46,6 +46,7 @@ def index():
 
 @app.route('/jogo', methods=['GET', 'POST'])
 def jogo():
+    nonce = g.get('nonce', '')
     if 'score' not in session:
         return redirect(url_for('index'), code=302)
     
@@ -64,23 +65,24 @@ def jogo():
         if session['current_scenario'] >= len(cenarios):
             final_score = session['score']
             session.clear()
-            return render_template('fim.html', score=final_score)
+            return render_template('fim.html', score=final_score, nonce=nonce)
 
     if session['current_scenario'] < len(cenarios):
-        return render_template('jogo.html', scenario=scenario, score=session['score'])
+        return render_template('jogo.html', scenario=scenario, score=session['score'], nonce=nonce)
     else:
         final_score = session['score']
         session.clear()
-        return render_template('fim.html', score=final_score)
+        return render_template('fim.html', score=final_score, nonce=nonce)
 
 @app.route('/fim')
 def fim():
+    nonce = g.get('nonce', '')
     if 'score' not in session:
         return redirect(url_for('index'))
 
     final_score = session['score']
     session.clear()
-    return render_template('fim.html', score=final_score)
+    return render_template('fim.html', score=final_score, nonce=nonce)
 
 if __name__ == '__main__':
     app.run()
