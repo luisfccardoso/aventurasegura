@@ -20,7 +20,7 @@ def add_nonce(response):
     if hasattr(g, 'nonce'):
         csp = (
             "default-src 'self'; "
-            f"script-src 'self' 'nonce-{g.nonce}' www.googletagmanager.com www.google-analytics.com static.getclicky.com getclicky.com; "
+            f"script-src 'self' 'nonce-{g.nonce}' www.googletagmanager.com www.google-analytics.com static.getclicky.com getclicky.com in.getclicky.com; "
             "img-src 'self' www.google-analytics.com getclicky.com; "
             "connect-src 'self' www.google-analytics.com getclicky.com; "
             "style-src 'self' 'unsafe-inline' stackpath.bootstrapcdn.com; "
