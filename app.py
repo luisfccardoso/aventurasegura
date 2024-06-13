@@ -20,9 +20,9 @@ def add_nonce(response):
     if hasattr(g, 'nonce'):
         csp = (
             "default-src 'self'; "
-            f"script-src 'self' 'nonce-{g.nonce}' www.googletagmanager.com www.google-analytics.com; "
-            "img-src 'self' www.google-analytics.com; "
-            "connect-src 'self' www.google-analytics.com; "
+            f"script-src 'self' 'nonce-{g.nonce}' www.googletagmanager.com www.google-analytics.com getclicky.com; "
+            "img-src 'self' www.google-analytics.com getclicky.com; "
+            "connect-src 'self' www.google-analytics.com getclicky.com; "
             "style-src 'self' 'unsafe-inline' stackpath.bootstrapcdn.com; "
         )
         response.headers['Content-Security-Policy'] = csp
