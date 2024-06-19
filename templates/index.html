@@ -3,8 +3,9 @@
 {% block content %}
 <div class="area">
     <h1 class="titulo">Bem-vindo à Aventura Segura!</h1>
+    
     <form method="post">
-        <button type="submit" class="btn btn-primary" onclick="botao_inicio()">Iniciar Jogo</button>
+        <button type="submit" class="btn btn-primary" id="botaoInicio">Iniciar Jogo</button>
     </form>
 </div>
 
@@ -15,9 +16,9 @@
       'nivel': 'NA',
       'cenario': 'NA'
     });
-  </script> 
+</script> 
 
-  <script nonce="{{ nonce }}">
+<script nonce="{{ nonce }}">
     function botao_inicio() {
         gtag(
             'event', 'botao_iniciar_jogo', {
@@ -27,5 +28,7 @@
             'cenario': 'NA'
         });
     }
-  </script> 
+
+    document.getElementById('botaoInicio').onclick = botao_inicio;
+</script>
 {% endblock %}
