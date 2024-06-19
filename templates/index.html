@@ -4,7 +4,25 @@
 <div class="area">
     <h1 class="titulo">Bem-vindo à Aventura Segura!</h1>
     <form method="post">
-        <button type="submit" class="btn btn-primary">Iniciar Jogo</button>
+        <button type="submit" class="btn btn-primary" onclick="botao_inicio()">Iniciar Jogo</button>
     </form>
 </div>
+
+<script>
+    gtag('event', 'abrir_tela_inicial', {
+      'nome_app': 'Aventura_Segura',
+      'nome_tela': 'index',
+      'nível': 'NA',
+      'cenario': 'NA'
+    });
+    function botao_inicio() {
+        gtag(
+            'event', 'botao_iniciar_jogo', {
+            'nome_app': 'Aventura_Segura',
+            'nome_tela': 'index',
+            'nível': '1',
+            'cenario': 'NA'
+        });
+    }
+  </script> 
 {% endblock %}
