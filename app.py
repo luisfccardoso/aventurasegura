@@ -51,6 +51,8 @@ def jogo():
         return redirect(url_for('index'), code=302)
     
     scenario = cenarios[session['current_scenario']]
+    cenario_numero = session['current_scenario']
+
     if request.method == 'POST':
         
         selected_option = request.form['option']
@@ -65,14 +67,14 @@ def jogo():
         if session['current_scenario'] >= len(cenarios):
             final_score = session['score']
             session.clear()
-            return render_template('fim.html', score=final_score, nonce=nonce)
+            return render_template('fim.html', score=final_score, nonce=nonce, cenario_numero=cenario_numero)
 
     if session['current_scenario'] < len(cenarios):
-        return render_template('jogo.html', scenario=scenario, score=session['score'], nonce=nonce)
+        return render_template('jogo.html', scenario=scenario, score=session['score'], nonce=nonce, cenario_numero=cenario_numero)
     else:
         final_score = session['score']
         session.clear()
-        return render_template('fim.html', score=final_score, nonce=nonce)
+        return render_template('fim.html', score=final_score, nonce=nonce, cenario_numero=cenario_numero)
 
 @app.route('/fim')
 def fim():
