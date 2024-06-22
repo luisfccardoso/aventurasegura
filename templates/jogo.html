@@ -16,10 +16,11 @@
 </div>
 
 <script nonce="{{ nonce }}">
-    console.log('botao_resposta_cenario_{{ cenario_numero }}');
+    let botao = 'botao_resposta_cenario_{{ cenario_numero }}';
+
     function botao_cenario() {
         gtag(
-            'event', 'botao_resposta_cenario_{{ cenario_numero }}', {
+            'event', botao, {
             'nome_app': 'Aventura_Segura',
             'nome_tela': 'jogo',
             'nivel': '1',
