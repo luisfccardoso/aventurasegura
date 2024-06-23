@@ -5,6 +5,7 @@
     <h1>{{ scenario.personagem }}</h1>
     <img style="display: block; margin-left: auto; margin-right: auto;" width="150px" src="{{ url_for('static', filename=scenario.imagem) }}" alt="{{ scenario.personagem }}">
     <p>{{ scenario.texto }}</p>
+    <button type="submit" name="option" value="left" class="btn btn-primary" style="margin: 10px" id="botao">{{ scenario.texto_escolha_esquerda }}</button>
     <form method="POST">
         <button type="submit" name="option" value="left" class="btn btn-primary" style="margin: 10px" id="botao_esquerda">{{ scenario.texto_escolha_esquerda }}</button>
         <hr>
@@ -27,5 +28,6 @@
 
     document.getElementById('botao_esquerda').onclick = botao_cenario;
     document.getElementById('botao_direita').onclick = botao_cenario;
+    document.getElementById('botao').onclick = botao_cenario;
 </script> 
 {% endblock %}
