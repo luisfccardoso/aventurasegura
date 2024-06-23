@@ -16,7 +16,7 @@
 <script nonce="{{ nonce }}">
 
     function botao_cenario() {
-        const botao = 'botao_resposta_cenario_{{ cenario_numero }}';
+        let botao = 'botao_resposta_cenario_{{ cenario_numero }}';
         gtag(
             'event', botao, {
             'nome_app': 'Aventura_Segura',
