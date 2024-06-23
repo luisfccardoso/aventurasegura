@@ -4,14 +4,12 @@
 <div class="area">
     <h1>{{ scenario.personagem }}</h1>
     <img style="display: block; margin-left: auto; margin-right: auto;" width="150px" src="{{ url_for('static', filename=scenario.imagem) }}" alt="{{ scenario.personagem }}">
-    <p>{{ scenario.text }}</p>
+    <p>{{ scenario.texto }}</p>
     <form method="POST">
-        <button type="submit" name="option" value="left" class="btn btn-primary" style="margin: 10px" id="botaoLeft">{{ scenario.left_choice_text }}</button>
+        <button type="submit" name="option" value="left" class="btn btn-primary" style="margin: 10px" id="botaoLeft">{{ scenario.texto_escolha_esquerda }}</button>
         <hr>
-        <button type="submit" name="option" value="right" class="btn btn-primary" id="botaoRight">{{ scenario.right_choice_text }}</button>
+        <button type="submit" name="option" value="right" class="btn btn-primary" id="botaoRight">{{ scenario.texto_escolha_direita }}</button>
     </form>
-    <p>Informações adicionais: {{ scenario.information }}</p>
-    <a href="{{ scenario.saiba_mais }}">Saiba Mais</a>
     <div class="score">Pontuação: {{ score }}</div>
 </div>
 

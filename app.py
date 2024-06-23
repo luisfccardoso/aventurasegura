@@ -34,7 +34,7 @@ if 'DYNO' in os.environ:
 with open(os.path.join(app.static_folder + '/json', 'cenarios.json'), 'r', encoding='utf-8') as f:
     cenarios = json.load(f)
 
-cenarios = cenarios[:10] #limitar 10
+cenarios = cenarios[:10] 
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -64,11 +64,11 @@ def jogo():
     if request.method == 'POST':
         selected_option = request.form['option']
         if selected_option == 'left':
-            impact = scenario['left_choice_impact']
+            impact = scenario['impacto_esquerda']
         else:
-            impact = scenario['right_choice_impact']
+            impact = scenario['impacto_direita']
 
-        session['score'] += sum(impact.values())
+        session['score'] += impact
         session['current_scenario'] += 1
 
         return redirect(url_for('jogo'))
