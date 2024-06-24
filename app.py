@@ -1,4 +1,5 @@
 import base64
+import random
 from flask import Flask, g, render_template, redirect, request, url_for, session
 from flask_talisman import Talisman
 import os
@@ -34,7 +35,7 @@ if 'DYNO' in os.environ:
 with open(os.path.join(app.static_folder + '/json', 'cenarios.json'), 'r', encoding='utf-8') as f:
     cenarios = json.load(f)
 
-cenarios = cenarios[:11] 
+cenarios_10 = cenarios
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -45,11 +46,11 @@ def index():
 
 @app.route('/historia', methods=['GET', 'POST'])
 def historia():
-    nonce = g.get('nonce', '')
+    nonce = g.get('nonce', '')    
     if request.method == 'POST':
         session['score'] = 0
         session['current_scenario'] = 1
-        session['len'] = min(len(cenarios), 11)
+        session['len'] = min(len(cenarios_10), 11)
         return redirect(url_for('jogo'))
     return render_template('historia.html', nonce=nonce)
 
@@ -59,14 +60,16 @@ def jogo():
     if 'score' not in session:
         return redirect(url_for('historia'), code=302)
     
+    random.shuffle(cenarios)
+    cenarios_10 = cenarios[:11] 
     cenario_numero = session['current_scenario']
 
-    if cenario_numero >= len(cenarios):
+    if cenario_numero >= len(cenarios_10):
         final_score = session['score']
         session.clear()
         return render_template('fim.html', score=final_score, nonce=nonce, cenario_numero=cenario_numero)
 
-    scenario = cenarios[cenario_numero]
+    scenario = cenarios_10[cenario_numero]
 
     if request.method == 'POST':
         selected_option = request.form['option']
