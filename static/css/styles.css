@@ -5,6 +5,7 @@ body, html {
     justify-content: center;
     align-items: center;
     background-color: #f0f0f0;
+    overflow-y: auto;
 }
 
 .titulo {
@@ -27,6 +28,7 @@ body, html {
     border: 1px solid gray;
     word-wrap: break-word; 
     word-break: break-word;
+    overflow-y: auto;
 }
 
 .botao {
@@ -44,11 +46,11 @@ body, html {
     justify-content: center;
     align-items: center;
     border: 1px solid #ccc;
-    padding: 10px; 
     box-sizing: border-box; 
     background-color: #a1c1cc;
     border-radius: 5px;
     text-align: center;
+    overflow-y: auto;
 }
 
 .texto {

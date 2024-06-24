@@ -5,12 +5,14 @@
     <h1 class="titulo texto">{{ scenario.personagem }}</h1>
     <img style="display: block; margin-left: auto; margin-right: auto;" width="150px" src="{{ url_for('static', filename=scenario.imagem) }}" alt="{{ scenario.personagem }}">
     <p class="texto" style="overflow-y: auto;max-height: 95px;">{{ scenario.texto }}</p>
-    <form method="POST" class="texto">
-        <p>Escolha:</p>
-        <button type="submit" name="option" value="left" class="btn btn-primary" style="margin-bottom: 10px">{{ scenario.texto_escolha_esquerda }}</button>
-        <p>ou</p>
-        <button type="submit" name="option" value="right" class="btn btn-primary">{{ scenario.texto_escolha_direita }}</button>
-    </form>
+    <div class="div-dentro">
+        <form method="POST" class="texto">
+            <p>Escolha:</p>
+            <button type="submit" name="option" value="left" class="btn btn-primary" style="margin-bottom: 10px">{{ scenario.texto_escolha_esquerda }}</button>
+            <p>ou</p>
+            <button type="submit" name="option" value="right" class="btn btn-primary">{{ scenario.texto_escolha_direita }}</button>
+        </form>
+    </div>
     <div class="score texto">Pontuação: {{ score }}</div>
 </div>
 {% endblock %}
