@@ -62,5 +62,6 @@ body, html {
     border-radius: 5px;
     color: #f3eeee;
     margin: 10px;
+    margin-left: 15px;
     overflow-y: auto;
 }
