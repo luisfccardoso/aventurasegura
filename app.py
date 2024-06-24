@@ -40,17 +40,24 @@ cenarios = cenarios[:11]
 def index():
     nonce = g.get('nonce', '')
     if request.method == 'POST':
+        return redirect(url_for('historia'))
+    return render_template('index.html', nonce=nonce)
+
+@app.route('/historia', methods=['GET', 'POST'])
+def historia():
+    nonce = g.get('nonce', '')
+    if request.method == 'POST':
         session['score'] = 0
         session['current_scenario'] = 1
         session['len'] = min(len(cenarios), 11)
         return redirect(url_for('jogo'))
-    return render_template('index.html', nonce=nonce)
+    return render_template('historia.html', nonce=nonce)
 
 @app.route('/jogo', methods=['GET', 'POST'])
 def jogo():
     nonce = g.get('nonce', '')
     if 'score' not in session:
-        return redirect(url_for('index'), code=302)
+        return redirect(url_for('historia'), code=302)
     
     cenario_numero = session['current_scenario']
 

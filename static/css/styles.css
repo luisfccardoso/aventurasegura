@@ -8,7 +8,7 @@ body, html {
 }
 
 .titulo {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
     max-width: 300px;
     text-align: center;
@@ -16,14 +16,14 @@ body, html {
 
 .area {    
     height: 100%;
-    width: 300px;
-    max-width: 300px;
-    padding: 20px;
-    display: grid;
+    width: 330px;
+    max-width: 330px;
+    padding: 10px;
+    display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    background-color: white;
+    background-color: #424040;
     border: 1px solid gray;
     word-wrap: break-word; 
     word-break: break-word;
@@ -46,4 +46,39 @@ body, html {
     margin: 10px;
     padding: 10px;
     cursor: pointer;
+}
+
+.div-dentro {
+    width: 100%; 
+    height: 100%; 
+    overflow-y: auto; 
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 10px; 
+    box-sizing: border-box; 
+    background-color: #a1c1cc;
+    border-radius: 5px;
+}
+
+.texto {
+    width: 100%; 
+    overflow-y: auto; 
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 10px; 
+    box-sizing: border-box; 
+    background-color: #56687b;
+    border-radius: 5px;
+    color: #f3eeee;
+}
+
+.button-form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px; /* Espaço acima dos botões */
 }
