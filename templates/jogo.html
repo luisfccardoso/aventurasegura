@@ -4,7 +4,7 @@
 <div class="div-dentro">
     <h1 class="titulo texto">{{ scenario.personagem }}</h1>
     <img style="display: block; margin-left: auto; margin-right: auto;" width="150px" src="{{ url_for('static', filename=scenario.imagem) }}" alt="{{ scenario.personagem }}">
-    <p class="texto">{{ scenario.texto }}</p>
+    <p class="texto" style="overflow-y: auto;">{{ scenario.texto }}</p>
     <form method="POST" class="texto">
         <p>Escolha:</p>
         <button type="submit" name="option" value="left" class="btn btn-primary" style="margin-bottom: 10px;">{{ scenario.texto_escolha_esquerda }}</button>

@@ -29,18 +29,6 @@ body, html {
     word-break: break-word;
 }
 
-.score, p {
-    text-align: center;
-}
-
-.area, button {
-    text-align: center;
-}
-
-.area, form, button {
-    text-align: center; 
-}
-
 .botao {
     display: block;
     margin: 10px;
@@ -63,22 +51,12 @@ body, html {
 }
 
 .texto {
-    width: 100%; 
-    overflow-y: auto; 
-    display: grid;
-    justify-content: center;
-    align-items: center;
+    width: 90%; 
     border: 1px solid #ccc;
     padding: 10px; 
     box-sizing: border-box; 
     background-color: #56687b;
     border-radius: 5px;
     color: #f3eeee;
-}
-
-.button-form {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 20px; /* Espaço acima dos botões */
+    margin: 10px;
 }
