@@ -1,32 +1,15 @@
 {% extends "base.html" %}
-
+{% block title %}Aventura Segura: Jogo - Cenário {{ cenario_numero }}{% endblock %}
 {% block content %}
 <div class="area">
     <h1>{{ scenario.personagem }}</h1>
     <img style="display: block; margin-left: auto; margin-right: auto;" width="150px" src="{{ url_for('static', filename=scenario.imagem) }}" alt="{{ scenario.personagem }}">
     <p>{{ scenario.texto }}</p>
     <form method="POST">
-        <button type="submit" name="option" value="left" class="btn btn-primary" style="margin: 10px" id="botao_esquerda">{{ scenario.texto_escolha_esquerda }}</button>
+        <button type="submit" name="option" value="left" class="btn btn-primary" style="margin: 10px">{{ scenario.texto_escolha_esquerda }}</button>
         <hr>
-        <button type="submit" name="option" value="right" class="btn btn-primary" id="botao_direita">{{ scenario.texto_escolha_direita }}</button>
+        <button type="submit" name="option" value="right" class="btn btn-primary">{{ scenario.texto_escolha_direita }}</button>
     </form>
     <div class="score">Pontuação: {{ score }}</div>
 </div>
-
-<script nonce="{{ nonce }}">
-
-    function botao_cenario() {
-        gtag(
-            'event', 'botao_resposta_cenario_{{ cenario_numero }}', {
-            'nome_app': 'Aventura_Segura',
-            'nome_tela': 'jogo',
-            'nivel': '1',
-            'cenario': '{{ cenario_numero }}'
-        });
-    }
-
-    document.getElementById('botao_esquerda').onclick = botao_cenario;
-    document.getElementById('botao_direita').onclick = botao_cenario;
-
-</script> 
 {% endblock %}

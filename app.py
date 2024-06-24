@@ -41,7 +41,7 @@ def index():
     nonce = g.get('nonce', '')
     if request.method == 'POST':
         session['score'] = 0
-        session['current_scenario'] = 0
+        session['current_scenario'] = 1
         session['len'] = min(len(cenarios), 10)
         return redirect(url_for('jogo'))
     return render_template('index.html', nonce=nonce)

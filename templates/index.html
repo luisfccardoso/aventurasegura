@@ -1,32 +1,11 @@
 {% extends "base.html" %}
-
+{% block title %}Aventura Segura: Seja bem-vindo!{% endblock %}
 {% block content %}
 <div class="area">
     <h1 class="titulo">Bem-vindo à Aventura Segura!</h1>
     
     <form method="post">
-        <button type="submit" class="btn btn-primary" id="botaoInicio">Iniciar Jogo</button>
+        <button type="submit" class="btn btn-primary">Iniciar Jogo</button>
     </form>
 </div>
-
-<script nonce="{{ nonce }}">
-    gtag('event', 'abrir_tela_inicial', {
-      'nome_app': 'Aventura_Segura',
-      'nome_tela': 'index',
-      'nivel': 'NA',
-      'cenario': 'NA'
-    });
-    
-    function botao_inicio() {
-        gtag(
-            'event', 'botao_iniciar_jogo', {
-            'nome_app': 'Aventura_Segura',
-            'nome_tela': 'index',
-            'nivel': '1',
-            'cenario': 'NA'
-        });
-    }
-
-    document.getElementById('botaoInicio').onclick = botao_inicio;
-</script> 
 {% endblock %}
