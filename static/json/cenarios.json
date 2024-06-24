@@ -238,12 +238,77 @@
     "imagem": "img/myoutuber_girl.jpg",
     "cor_fundo": "#d5e8d4",
     "texto": "Sua amiga 'influencer' está planejando uma viagem e quer usar a internet para reservar hotéis e comprar passagens. O que você faz nesta situação?",
-    "texto_escolha_esquerda": "Fala para usar um computador público em um café para fazer as reservas."
+    "texto_escolha_esquerda": "Fala para usar um computador público em um café para fazer as reservas.",
     "texto_escolha_direita": "Sugere que ela use dispositivos conhecidos em uma rede segura e verifica se os sites são confiáveis.",
     "consequencia_esquerda": "Ela faz as reservas com segurança e aproveita sua viagem sem preocupações.",
     "consequencia_direita": "Seus dados financeiros são roubados e ela tem problemas com sua viagem.",
     "informacao": "Ao usar a internet para compras e reservas, proteja seus dados financeiros e utilize dispositivos, redes e sites confiáveis.",
     "impacto_esquerda": 0,
     "impacto_direita": 1
-  }
+  },
+  {
+    "personagem": "O Youtuber",
+    "imagem": "img/youtuber.jpg",
+    "cor_fundo": "#ffa500",
+    "texto": "Seu colega te convida para jogar um jogo de apostas que viu no youtube, prometendo dinheiro fácil. O que você faz?",
+    "texto_escolha_esquerda": "Recusa o convite e explica para ele que o jogo de apostas é um golpe e que ele pode perder dinheiro.",
+    "texto_escolha_direita": "Aceita o convite e deposita dinheiro na plataforma, esperando ganhar muito mais.",
+    "consequencia_esquerda": "Você protege seu colega de cair em um golpe e o ajuda a entender os perigos dos jogos de azar online.",
+    "consequencia_direita": "Você perde dinheiro e se arrepende de ter confiado em uma promessa falsa. Seu colega também perde dinheiro e fica chateado com você.",
+    "informacao": "Jogos de azar online são frequentemente manipulados para que você perca dinheiro. Não caia em promessas de dinheiro fácil e jogue com responsabilidade.",
+    "impacto_esquerda": 1,
+    "impacto_direita": 0
+},
+{
+  "personagem": "A Vítima do Bullying",
+  "imagem": "img/vitima_cyberbullyng.jpg",
+  "cor_fundo": "#808080",
+  "texto": "Você vê um colega sendo humilhado e ridicularizado no grupo da turma. O que você faz?",
+  "texto_escolha_esquerda": "Denuncia o cyberbullying para um adulto de confiança (pais, professores, etc.) e oferece apoio ao colega.",
+  "texto_escolha_direita": "Não faz nada, com medo de se tornar o próximo alvo.",
+  "consequencia_esquerda": "Você ajuda a interromper o cyberbullying e mostra ao seu colega que ele não está sozinho. Seus pais e professores te elogiam pela coragem.",
+  "consequencia_direita": "O cyberbullying continua e seu colega sofre ainda mais. Você se sente culpado por não ter feito nada para ajudar.",
+  "informacao": "Bullying é um crime previsto na Lei nº 13185/2015! Se você presenciar ou sofrer cyberbullying, denuncie. Não tenha medo de pedir ajuda.",
+  "impacto_esquerda": 1,
+  "impacto_direita": 0
+},
+{
+  "personagem": "O Youtuber",
+  "imagem": "img/youtuber.jpg",
+  "cor_fundo": "#ff69b4",
+  "texto": "Seu youtuber favorito te envia uma mensagem privada pedindo sua senha para te dar um presente exclusivo. O que você faz?",
+  "texto_escolha_esquerda": "Envia sua senha imediatamente, ansioso pelo presente.",
+  "texto_escolha_direita": "Ignora a mensagem e denuncia o perfil, pois pode ser um impostor tentando roubar seus dados.",
+  "consequencia_esquerda": "Sua conta é invadida e usada para espalhar spam e golpes. Você perde o acesso aos seus seguidores e fica com a reputação manchada.",
+  "consequencia_direita":"Você protege sua conta e ajuda a evitar que outras pessoas caiam no mesmo golpe.", 
+  "informacao": "Nunca compartilhe suas senhas com ninguém, mesmo que pareça ser alguém que você confia. Youtubers e outras celebridades não costumam pedir dados pessoais de seus fãs.",
+  "impacto_esquerda": 0,
+  "impacto_direita": 1
+},
+{
+  "personagem": "O Estagiário",
+  "imagem": "img/investigador.jpg",
+  "cor_fundo": "#f0e68c",
+  "texto": "Você está estagiando em uma empresa e encontra um pendrive no chão. O que você faz?",
+  "texto_escolha_esquerda": "Leva o pendrive para casa e o conecta no seu computador pessoal para ver o que tem dentro.",
+  "texto_escolha_direita": "Entrega o pendrive para o departamento de TI para verificar se há algum risco de segurança.",
+  "consequencia_esquerda": "Você infecta seu computador com um vírus que rouba seus dados pessoais e bancários. Além disso, pode ter colocado a empresa em risco.",
+  "consequencia_direita": "Você é elogiado pela sua atitude responsável e ajuda a proteger a empresa de possíveis ameaças.",
+  "informacao": "Pendrives desconhecidos podem conter vírus e malware que podem comprometer seus dados e dispositivos.",
+  "impacto_esquerda": 0,
+  "impacto_direita": 1
+},
+{
+  "personagem": "O Diretor",
+  "imagem": "img/diretor.jpg",
+  "cor_fundo": "#8b4513", 
+  "texto": "O diretor da escola te chama para conversar sobre um e-mail suspeito que ele recebeu, pedindo informações pessoais. O que você faz?",
+  "texto_escolha_esquerda":"Diz ao diretor que deve sempre confiar em soliticações por email.", 
+  "texto_escolha_direita": "Explica ao diretor que se trata de um golpe de phishing e o orienta a não clicar em links ou fornecer dados pessoais.",
+  "consequencia_esquerda": "O diretor clica no link e tem seus dados roubados. A escola sofre um ataque de ransomware e precisa pagar um resgate para recuperar seus arquivos.",
+  "consequencia_direita":"O diretor agradece sua ajuda e evita cair no golpe. A escola promove uma palestra sobre segurança online para conscientizar alunos e funcionários.", 
+  "informacao": "Phishing é uma técnica usada por criminosos para roubar dados pessoais através de e-mails e mensagens falsas. Desconfie de mensagens que pedem informações confidenciais e nunca clique em links suspeitos.",
+  "impacto_esquerda": 0,
+  "impacto_direita": 1
+}
 ]
