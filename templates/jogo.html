@@ -7,9 +7,9 @@
     <p class="texto" style="overflow-y: auto;max-height: 95px;">{{ scenario.texto }}</p>
     <form method="POST" class="texto">
         <p>Escolha:</p>
-        <button type="submit" name="option" value="left" class="btn btn-primary" style="margin-bottom: 10px;">{{ scenario.texto_escolha_esquerda }}</button>
+        <button type="submit" name="option" value="left" class="btn btn-primary" style="margin-bottom: 10px;font-size: 15px;">{{ scenario.texto_escolha_esquerda }}</button>
         <p>ou</p>
-        <button type="submit" name="option" value="right" class="btn btn-primary">{{ scenario.texto_escolha_direita }}</button>
+        <button type="submit" name="option" value="right" class="btn btn-primary" style="font-size: 15px;">{{ scenario.texto_escolha_direita }}</button>
     </form>
     <div class="score texto">Pontuação: {{ score }}</div>
 </div>
