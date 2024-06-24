@@ -34,7 +34,7 @@ if 'DYNO' in os.environ:
 with open(os.path.join(app.static_folder + '/json', 'cenarios.json'), 'r', encoding='utf-8') as f:
     cenarios = json.load(f)
 
-cenarios = cenarios[:10] 
+cenarios = cenarios[:11] 
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -42,7 +42,7 @@ def index():
     if request.method == 'POST':
         session['score'] = 0
         session['current_scenario'] = 1
-        session['len'] = min(len(cenarios), 10)
+        session['len'] = min(len(cenarios), 11)
         return redirect(url_for('jogo'))
     return render_template('index.html', nonce=nonce)
 
