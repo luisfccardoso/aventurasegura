@@ -48,6 +48,7 @@ body, html {
     box-sizing: border-box; 
     background-color: #a1c1cc;
     border-radius: 5px;
+    text-align: center;
 }
 
 .texto {
@@ -59,4 +60,5 @@ body, html {
     border-radius: 5px;
     color: #f3eeee;
     margin: 10px;
+    overflow-y: auto;
 }
