@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Aventura Segura: Jogo - Feedback {{ cenario_numero }}{% endblock %}
+{% block content %}
+<div class="div-dentro">
+    <div class="titulo texto">{{ titulo_feedback }}</div>
+    <div class="texto">{{ mensagem_feedback }}</div>
+    <form method="GET" action="{{ url_for('jogo') }}">
+        <button type="submit" class="btn btn-primary">Próxima!</button>
+    </form>
+</div>
+{% endblock %}

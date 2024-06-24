@@ -36,6 +36,8 @@ with open(os.path.join(app.static_folder + '/json', 'cenarios.json'), 'r', encod
     cenarios = json.load(f)
 
 cenarios_10 = cenarios
+titulo_feedback = ''
+mensagem_feedback = ''
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -53,6 +55,13 @@ def historia():
         session['len'] = min(len(cenarios_10), 11)
         return redirect(url_for('jogo'))
     return render_template('historia.html', nonce=nonce)
+
+@app.route('/consequencia', methods=['GET', 'POST'])
+def consequencia():
+    nonce = g.get('nonce', '')    
+    if request.method == 'POST':
+        return redirect(url_for('jogo'))
+    return render_template('consequencia.html', nonce=nonce, titulo_feedback=titulo_feedback, mensagem_feedback=mensagem_feedback)
 
 @app.route('/jogo', methods=['GET', 'POST'])
 def jogo():
@@ -75,13 +84,25 @@ def jogo():
         selected_option = request.form['option']
         if selected_option == 'left':
             impact = scenario['impacto_esquerda']
+            if impact == 1:
+                mensagem_feedback = scenario['consequencia_esquerda']
+                titulo_feedback = "Acertou"
+            else:
+                mensagem_feedback = scenario['consequencia_esquerda']
+                titulo_feedback = "Tente de novo!"
         else:
             impact = scenario['impacto_direita']
+            if impact == 1:
+                mensagem_feedback = scenario['consequencia_direita']
+                titulo_feedback = "Acertou"
+            else:
+                mensagem_feedback = scenario['consequencia_direita']
+                titulo_feedback = "Tente de novo!"
 
         session['score'] += impact
         session['current_scenario'] += 1
 
-        return redirect(url_for('jogo'))
+        return render_template('consequencia.html', nonce=nonce, titulo_feedback=titulo_feedback, mensagem_feedback=mensagem_feedback, cenario_numero=cenario_numero)
 
     return render_template('jogo.html', scenario=scenario, score=session['score'], nonce=nonce, cenario_numero=cenario_numero)
 
