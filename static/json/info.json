@@ -77,7 +77,8 @@
   "Uso de VPN": {
         "information": "Usar uma VPN ajuda a proteger sua privacidade online, especialmente em redes públicas.",
         "saiba_mais": "https://cidadaonarede.nic.br/pt/videos/o-que-e-uma-vpn"
-    "Backups": {
+       },
+"Backups": {
         "information": "Fazer backups regulares dos seus dados pode prevenir a perda de informações importantes.",
         "saiba_mais": "https://cartilha.cert.br/fasciculos/backup/fasciculo-backup.pdf"
     }
