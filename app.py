@@ -35,7 +35,6 @@ if 'DYNO' in os.environ:
 with open(os.path.join(app.static_folder + '/json', 'cenarios.json'), 'r', encoding='utf-8') as f:
     cenarios = json.load(f)
 
-cenarios_10 = cenarios
 titulo_feedback = ''
 mensagem_feedback = ''
 
@@ -50,10 +49,11 @@ def index():
 def historia():
     nonce = g.get('nonce', '')    
     if request.method == 'POST':
+        cenarios_10 = cenarios
+        random.shuffle(cenarios)
         session['score'] = 0
         session['current_scenario'] = 1
         session['len'] = min(len(cenarios_10), 11)
-        random.shuffle(cenarios)
         return redirect(url_for('jogo'))
     return render_template('historia.html', nonce=nonce)
 
