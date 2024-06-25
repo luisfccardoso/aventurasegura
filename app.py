@@ -49,11 +49,10 @@ def index():
 def historia():
     nonce = g.get('nonce', '')    
     if request.method == 'POST':
-        cenarios_10 = cenarios
-        random.shuffle(cenarios)
         session['score'] = 0
         session['current_scenario'] = 1
-        session['len'] = min(len(cenarios_10), 11)
+        random.shuffle(cenarios)
+
         return redirect(url_for('jogo'))
     return render_template('historia.html', nonce=nonce)
 
@@ -71,17 +70,16 @@ def jogo():
     if 'score' not in session:
         return redirect(url_for('historia'), code=302)
     
-    cenarios_10 = cenarios[:11] 
     cenario_numero = session['current_scenario']
-    scenario = cenarios_10[cenario_numero]
+    scenario = cenarios[cenario_numero]
 
-    if cenario_numero >= len(cenarios_10):
+    if cenario_numero > 10:
         final_score = session['score']
         session.clear()
         return render_template('fim.html', score=final_score, nonce=nonce, cenario_numero=cenario_numero)
 
     if request.method == 'POST':
-        scenario = cenarios_10[cenario_numero]
+        scenario = cenarios[cenario_numero]
         selected_option = request.form['option']
         if selected_option == 'left':
             impact = scenario['impacto_esquerda']

@@ -235,7 +235,7 @@
   },
   {
     "personagem": "A Viajante",
-    "imagem": "img/myoutuber_girl.jpg",
+    "imagem": "img/youtuber_girl.jpg",
     "cor_fundo": "#d5e8d4",
     "texto": "Sua amiga 'influencer' está planejando uma viagem e quer usar a internet para reservar hotéis e comprar passagens. O que você faz nesta situação?",
     "texto_escolha_esquerda": "Fala para usar um computador público em um café para fazer as reservas.",
