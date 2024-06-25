@@ -2,61 +2,60 @@
     "perfil1": {
         "nivel": "Básico",
         "pontuacao": 1,
-        "titulo": "Explorador Curioso",
+        "titulo": "Básico 01",
         "descricao": "Você está dando seus primeiros passos no mundo digital. Suas escolhas mostram que você está curioso e ansioso para aprender sobre segurança online. Continue explorando e perguntando, pois o conhecimento é a chave para a proteção!"
     },
     "perfil2": {
         "nivel": "Básico",
         "pontuacao": 2,
-        "titulo": "Navegante Iniciante",
+        "titulo": "Básico 02",
         "descricao": "Você está começando a entender os perigos da internet. Suas decisões demonstram que você está atento e disposto a aprender como se proteger. Continue navegando com cuidado e buscando informações confiáveis!"
     },
     "perfil3": {
         "nivel": "Básico",
         "pontuacao": 3,
-        "titulo": "Aprendiz Digital",
+        "titulo": "Básico 03",
         "descricao": "Você está no caminho certo! Suas escolhas revelam que você está absorvendo conhecimentos importantes sobre segurança online. Continue praticando e se informando para se tornar um navegador mais seguro!"
     },
     "perfil4": {
         "nivel": "Intermediário",
         "pontuacao": 4,
-        "titulo": "Protetor Consciente",
+        "titulo": "Intermediário 01",
         "descricao": "Você se preocupa com sua segurança online e toma decisões inteligentes. Suas ações demonstram que você está atento aos riscos e sabe como se proteger. Continue vigilante e compartilhe suas dicas com seus amigos!"
     },
     "perfil5": {
         "nivel": "Intermediário",
-        "pontuacao": 5,
-        "titulo": "Guardião da Web",
+        "pontuacao":"Intermediário 02",
         "descricao": "Você é um defensor da segurança online. Suas escolhas mostram que você valoriza a privacidade e sabe como identificar ameaças. Continue sendo um exemplo para os outros e ajude a construir um ambiente digital mais seguro!"
     },
     "perfil6": {
         "nivel": "Intermediário",
         "pontuacao": 6,
-        "titulo": "Agente de Segurança Digital",
+        "titulo": "Intermediário 03",
         "descricao": "Você está se tornando um especialista em segurança online. Suas habilidades demonstram que você está preparado para enfrentar os desafios do mundo digital. Continue aprimorando seus conhecimentos e compartilhando suas experiências!"
     },
     "perfil7": {
         "nivel": "Avançado",
         "pontuacao": 7,
-        "titulo": "Cibernético Consciente",
+        "titulo": "Avançado 01",
         "descricao": "Você é um cidadão digital responsável e engajado. Suas ações mostram que você se preocupa com a segurança de todos e está comprometido em construir um futuro digital mais seguro. Continue inspirando e educando os outros com seu exemplo!"
     },
     "perfil8": {
         "nivel": "Avançado",
         "pontuacao": 8,
-        "titulo": "Hacker Ético",
+        "titulo": "Avançado 02",
         "descricao": "Você possui conhecimentos avançados em segurança online e usa suas habilidades para o bem. Suas ações demonstram que você está comprometido em proteger sistemas e dados. Continue defendendo a ética no mundo digital e inspirando outros a fazerem o mesmo!"
     },
     "perfil9": {
         "nivel": "Avançado",
         "pontuacao": 9,
-        "titulo": "Embaixador da Segurança Digital",
+        "titulo": "Avançado 03",
         "descricao": "Você é um líder em segurança online. Suas ações e palavras inspiram e educam outros sobre a importância da proteção digital. Continue compartilhando seu conhecimento e promovendo um ambiente digital mais seguro para todos!"
     },
     "perfil10": {
         "nivel": "Lendário",
         "pontuacao": 10,
-        "titulo": "Mestre da Segurança Digital",
-        "descricao": "Você é um verdadeiro mestre em segurança online! Seu conhecimento e experiência são incomparáveis. Suas ações e palavras inspiram e guiam outros a construir um futuro digital mais seguro e próspero. Continue sendo um farol de conhecimento e proteção para todos!"
+        "titulo": "Lendário",
+        "descricao": "Você é um verdadeiro estudioso da segurança online! Seu conhecimento e experiência são incomparáveis. Suas ações e palavras inspiram e guiam outros a construir um futuro digital mais seguro e próspero. Continue sendo um farol de conhecimento e proteção para todos!"
     }
 }
