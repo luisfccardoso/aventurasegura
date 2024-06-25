@@ -81,6 +81,7 @@ def jogo():
     if request.method == 'POST':
         scenario = cenarios[cenario_numero]
         selected_option = request.form['option']
+        
         if selected_option == 'left':
             impact = scenario['impacto_esquerda']
             if impact == 1:

@@ -43,7 +43,7 @@
     "imagem": "img/gamer.jpg",
     "cor_fundo": "#f89226",
     "texto": "Seu amigo passa o dia todo jogando videogame e não quer sair de casa. O que você faz nesta situação?",
-    "texto_escolha_esquerda": "Também passa a ficar o tempo todo jogando para não ficar para tráz.",
+    "texto_escolha_esquerda": "Também passa a ficar o tempo todo jogando para não ficar para tras.",
     "texto_escolha_direita": "Propõe atividades divertidas ao ar livre para fazerem juntos.",
     "consequencia_esquerda": "Ele fica de castigo, mas começa a usar a internet de forma mais equilibrada.",
     "consequencia_direita": "Vocês se divertem muito e ele percebe que tem outras coisas legais para fazer.",
