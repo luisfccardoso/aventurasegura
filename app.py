@@ -109,7 +109,7 @@ def jogo():
         session['score'] += impact
         session['current_scenario'] += 1
 
-        return render_template('consequencia.html', nonce=nonce, titulo_feedback=titulo_feedback, mensagem_feedback=mensagem_feedback, cenario_numero=cenario_numero)
+        return render_template('jogo.html', scenario=scenario, score=session['score'], nonce=nonce, cenario_numero=cenario_numero)#nonce=nonce, titulo_feedback=titulo_feedback, mensagem_feedback=mensagem_feedback, cenario_numero=cenario_numero)
 
     return render_template('jogo.html', scenario=scenario, score=session['score'], nonce=nonce, cenario_numero=cenario_numero)
 
