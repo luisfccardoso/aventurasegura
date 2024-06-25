@@ -34,9 +34,12 @@ if 'DYNO' in os.environ:
 
 with open(os.path.join(app.static_folder + '/json', 'cenarios.json'), 'r', encoding='utf-8') as f:
     cenarios = json.load(f)
+with open(os.path.join(app.static_folder + '/json', 'perfis.json'), 'r', encoding='utf-8') as f:
+    perfis = json.load(f)
 
 titulo_feedback = ''
 mensagem_feedback = ''
+perfil = ''
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -73,10 +76,14 @@ def jogo():
     cenario_numero = session['current_scenario']
     scenario = cenarios[cenario_numero]
 
-    if cenario_numero > 10:
+    if cenario_numero > 4:
         final_score = session['score']
         session.clear()
-        return render_template('fim.html', score=final_score, nonce=nonce, cenario_numero=cenario_numero)
+        for count in range(11):
+            if final_score == count:
+                perfil = perfis[count]
+                break
+        return render_template('fim.html', score=final_score, nonce=nonce, cenario_numero=cenario_numero, perfil=perfil)
 
     if request.method == 'POST':
         scenario = cenarios[cenario_numero]
@@ -114,7 +121,18 @@ def fim():
 
     final_score = session['score']
     session.clear()
-    return render_template('fim.html', score=final_score, nonce=nonce)
+
+    for count in range(11):
+        if final_score == count:
+            perfil = perfis[count]
+            break
+
+    return render_template('fim.html', score=final_score, nonce=nonce,perfil=perfil)
+
+@app.route('/obrigado')
+def obrigado():
+    nonce = g.get('nonce', '')
+    return render_template('obrigado.html', nonce=nonce)
 
 if __name__ == '__main__':
     app.run()
