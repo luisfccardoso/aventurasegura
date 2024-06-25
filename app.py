@@ -76,7 +76,7 @@ def jogo():
     cenario_numero = session['current_scenario']
     scenario = cenarios[cenario_numero]
 
-    if cenario_numero > 4:
+    if cenario_numero > 11:
         final_score = session['score']
         session.clear()
         for count in range(11):
