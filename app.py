@@ -53,15 +53,17 @@ def historia():
         session['score'] = 0
         session['current_scenario'] = 1
         session['len'] = min(len(cenarios_10), 11)
+        random.shuffle(cenarios)
         return redirect(url_for('jogo'))
     return render_template('historia.html', nonce=nonce)
 
 @app.route('/consequencia', methods=['GET', 'POST'])
 def consequencia():
-    nonce = g.get('nonce', '')    
+    nonce = g.get('nonce', '')  
+
     if request.method == 'POST':
         return redirect(url_for('jogo'))
-    return render_template('consequencia.html', nonce=nonce, titulo_feedback=titulo_feedback, mensagem_feedback=mensagem_feedback)
+    return render_template('consequencia.html', nonce=nonce)
 
 @app.route('/jogo', methods=['GET', 'POST'])
 def jogo():
@@ -69,18 +71,17 @@ def jogo():
     if 'score' not in session:
         return redirect(url_for('historia'), code=302)
     
-    random.shuffle(cenarios)
     cenarios_10 = cenarios[:11] 
     cenario_numero = session['current_scenario']
+    scenario = cenarios_10[cenario_numero]
 
     if cenario_numero >= len(cenarios_10):
         final_score = session['score']
         session.clear()
         return render_template('fim.html', score=final_score, nonce=nonce, cenario_numero=cenario_numero)
 
-    scenario = cenarios_10[cenario_numero]
-
     if request.method == 'POST':
+        scenario = cenarios_10[cenario_numero]
         selected_option = request.form['option']
         if selected_option == 'left':
             impact = scenario['impacto_esquerda']
@@ -98,7 +99,7 @@ def jogo():
             else:
                 mensagem_feedback = scenario['consequencia_direita']
                 titulo_feedback = "Tente de novo!"
-
+        
         session['score'] += impact
         session['current_scenario'] += 1
 
