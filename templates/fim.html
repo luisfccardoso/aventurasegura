@@ -7,7 +7,14 @@
     <img style="display: block; margin-left: auto; margin-right: auto;" width="150px" src="{{ url_for('static', filename=perfil.imagem) }}" alt="{{ perfil.titulo }}">
     <h1 class="titulo texto">{{ perfil.titulo }}</h1>
     <p class="texto">{{ perfil.descricao }} <br><br> <strong>Sua pontuação final é: {{ score }}</strong></p>
-    <a href="https://api.whatsapp.com/send/?text=Quer+aprender+sobre+seguran%C3%A7a+na+internet%3F+Jogue+o+jogo+Aventura+Segura.+Acesse+https%3A%2F%2Fwww.aventurasegura.online%20\o/&type=custom_url&app_absent=0" target="_blank" class="btn btn-primary" style="margin: 10px;">Compartilhe no Whatsapp com seus amigos!</a>
+    <button class="btn btn-primary" style="margin: 10px;" id="compartilha">Compartilhe no Whatsapp com seus amigos!</button>
     <a href="{{ url_for('index') }}" class="btn btn-primary" id="botaoFim" style="margin: 10px;">Jogar outros cenários!</a>
 </div>
+
+<script nonce="{{ nonce }}">
+    document.getElementById('compartilha').addEventListener('click', function() {
+        window.open('https://api.whatsapp.com/send/?text=Quer+aprender+sobre+seguran%C3%A7a+na+internet%3F+Jogue+o+jogo+Aventura+Segura.+Acesse+https%3A%2F%2Fwww.aventurasegura.online%20\o/&type=custom_url&app_absent=0', '_blank');
+        window.location.href = "{{ url_for('obrigado') }}";
+    });
+</script>
 {% endblock %}
