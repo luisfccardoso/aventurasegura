@@ -204,8 +204,8 @@
     "consequencia_esquerda": "Você espalha a foto e seu amigo fica muito chateado com você. Isso pode ser considerado cyberbullying.",
     "consequencia_direita": "Seu amigo te agradece por não ter compartilhado a foto e vocês conversam sobre privacidade e respeito.",
     "informacao": "Compartilhar fotos constrangedoras de outras pessoas sem consentimento é crime e pode ter consequências sérias.",
-    "impacto_esquerda": 1,
-    "impacto_direita": 0
+    "impacto_esquerda": 0,
+    "impacto_direita": 1
   },
   {
     "personagem": "A Professora",
