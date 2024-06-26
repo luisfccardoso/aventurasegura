@@ -310,5 +310,44 @@
   "informacao": "Phishing é uma técnica usada por criminosos para roubar dados pessoais através de e-mails e mensagens falsas. Desconfie de mensagens que pedem informações confidenciais e nunca clique em links suspeitos.",
   "impacto_esquerda": 0,
   "impacto_direita": 1
+},
+{
+  "personagem": "Gamer",
+  "imagem": "img/gamer.jpg",
+  "cor_fundo": "#ffd700",
+  "texto": "Você encontra uma oferta imperdível para comprar a key de um jogo que você queria muito, mas o site parece suspeito. O que você faz?",
+  "texto_escolha_esquerda": "Aproveita a oferta e compra a key, afinal, é muito mais barato.",
+  "texto_escolha_direita": "Desiste da compra e procura a key em lojas oficiais e confiáveis, mesmo que seja mais cara.",
+  "consequencia_esquerda": "Você recebe a key e consegue jogar por um tempo, mas depois descobre que sua conta foi banida porque a key foi comprada com cartão de crédito roubado. Você perde o jogo e o dinheiro.",
+  "consequencia_direita": "Você paga um pouco mais, mas tem a garantia de que a key é legítima e pode jogar sem preocupações.",
+  "informacao": "Comprar keys de jogos em sites não oficiais pode parecer vantajoso, mas é um risco que pode levar ao banimento da sua conta. Prefira sempre lojas confiáveis para evitar problemas.",
+  "impacto_esquerda": 0,
+  "impacto_direita": 1
+},
+{
+  "personagem": "Gamer",
+  "imagem": "img/gamer.jpg",
+  "cor_fundo": "#800000",
+  "texto": "Durante uma partida de FPS online, você entra em um chat de voz onde os outros jogadores estão te insultando e te xingando. O que você faz?",
+  "texto_escolha_esquerda": "Responde aos insultos, entrando na discussão e alimentando o ambiente tóxico.",
+  "texto_escolha_direita": "Sai do chat de voz e reporta os jogadores tóxicos para os moderadores do jogo.",
+  "consequencia_esquerda": "Você se deixa levar pela raiva e acaba perdendo a partida. O ambiente tóxico te deixa frustrado e estraga sua experiência de jogo.",
+  "consequencia_direita": "Você se protege do ambiente tóxico e ajuda a manter a comunidade do jogo mais saudável. Os jogadores tóxicos são punidos e você pode continuar jogando em paz.",
+  "informacao": "Jogos online devem ser divertidos e inclusivos. Não tolere comportamentos tóxicos e denuncie jogadores que estragam a experiência dos outros.",
+  "impacto_esquerda": 0,
+  "impacto_direita": 1
+},
+{
+  "personagem": "O Explorador de Mundos Virtuais",
+  "imagem": "img/explorador.jpg",
+  "cor_fundo": "#6a5acd",
+  "texto": "Enquanto explora um novo mundo virtual, um jogador que você não conhece começa a te enviar mensagens privadas, perguntando sobre sua vida pessoal. O que você faz?",
+  "texto_escolha_esquerda": "Responde às perguntas, contando detalhes sobre sua vida, afinal, ele parece legal.",
+  "texto_escolha_direita": "Ignora as mensagens e bloqueia o jogador, pois não se sente confortável em compartilhar informações pessoais com estranhos.",
+  "consequencia_esquerda": "O jogador usa as informações que você compartilhou para te assediar e te chantagear. Você se arrepende de ter confiado nele.",
+  "consequencia_direita": "Você se protege de um possível perigo e continua explorando o mundo virtual sem preocupações. Encontra outros jogadores amigáveis e se diverte com segurança.",
+  "informacao": "Nunca compartilhe informações pessoais com estranhos online. Se alguém te deixar desconfortável, bloqueie e denuncie o jogador.",
+  "impacto_esquerda": 0,
+  "impacto_direita": 1
 }
 ]
