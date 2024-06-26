@@ -6,9 +6,9 @@
     <h1 class="titulo texto">Fim de Jogo!</h1>
     <img style="display: block; margin-left: auto; margin-right: auto;" width="150px" src="{{ url_for('static', filename=perfil.imagem) }}" alt="{{ perfil.titulo }}">
     <h1 class="titulo texto">{{ perfil.titulo }}</h1>
-    <p class="texto">{{ perfil.descricao }} <br><br> <strong>Sua pontuação final é: {{ score }}</strong></p>
+    <p class="texto">{{ perfil.descricao }} <br><br> <strong>Sua pontuação final é: {{ pontuacao }}</strong></p>
     <button class="btn btn-primary" style="margin: 10px;" id="compartilha">Compartilhe no Whatsapp com seus amigos!</button>
-    <a href="{{ url_for('index') }}" class="btn btn-primary" id="botaoFim" style="margin: 10px;">Jogar outros cenários!</a>
+    <a href="{{ url_for('historia') }}" class="btn btn-primary" style="margin: 10px;">Jogar outros cenários!</a>
 </div>
 
 <script nonce="{{ nonce }}">
