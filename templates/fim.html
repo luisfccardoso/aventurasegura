@@ -13,7 +13,7 @@
 
 <script nonce="{{ nonce }}">
     document.getElementById('compartilha').addEventListener('click', function() {
-        window.open('https://api.whatsapp.com/send/?text=Quer+aprender+sobre+seguran%C3%A7a+na+internet%3F+Jogue+o+jogo+Aventura+Segura.+Acesse+https%3A%2F%2Fwww.aventurasegura.online%20\o/&type=custom_url&app_absent=0', '_blank');
+        window.open('https://api.whatsapp.com/send?text=Gostaria%20de%20compartilhar%20um%20jogo%20sobre%20seguran%C3%A7a%20na%20internet.%20Acesse%20https://www.aventurasegura.online', '_blank');
         window.location.href = "{{ url_for('obrigado') }}";
     });
 </script>
