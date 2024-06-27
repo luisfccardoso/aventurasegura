@@ -38,8 +38,7 @@ with open(os.path.join(app.static_folder + '/json', 'perfis.json'), 'r', encodin
     perfis = json.load(f)
 
 def get_cenario(cenarios):
-    random.shuffle(cenarios)
-    cenario = cenarios[1]
+    cenario = cenarios[session['cenario_atual']]
 
     session['id'] = cenario['id']
     session['personagem'] = cenario['personagem']
@@ -63,6 +62,8 @@ def index():
 def historia():
     nonce = g.get('nonce', '')  
     session.clear()
+    random.shuffle(cenarios)
+    session['cenario_atual'] = 1
     get_cenario(cenarios)
       
     if request.method == 'POST':
