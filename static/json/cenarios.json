@@ -474,5 +474,91 @@
   "informacao": "Fotos e vídeos de família são memórias preciosas que devem ser protegidas. Faça backups regulares desses arquivos para garantir que eles não sejam perdidos para sempre.",
   "impacto_esquerda": 1,
   "impacto_direita": 0
+},
+{
+  "id":35,
+  "personagem": "O Diretor",
+  "imagem": "img/diretor.jpg",
+  "cor_fundo": "#8b4513",
+  "texto": "O diretor da escola chega uma manhã e descobre que o servidor principal da escola está desligado. Ele entra em pânico, pensando que todos os dados da escola foram perdidos. Felizmente, a equipe de TI consegue reiniciar o servidor e todos os arquivos estão intactos. O que o diretor faz a seguir?",
+  "texto_escolha_esquerda": "Reúne a equipe de TI e discute a importância de ter um sistema de backup eficiente para evitar futuros sustos e garantir a segurança dos dados da escola.",
+  "texto_escolha_direita": "Respira aliviado por não ter havido perda de dados e segue com o dia normalmente, sem tomar nenhuma medida preventiva.",
+  "consequencia_esquerda": "A escola implementa um sistema de backup automático e redundante, garantindo que os dados estejam sempre protegidos. O diretor se sente mais tranquilo e confiante em relação à segurança das informações da escola.",
+  "consequencia_direita": "Semanas depois, o servidor sofre uma pane irreparável e todos os dados da escola são perdidos. O diretor se arrepende de não ter tomado medidas preventivas e a escola enfrenta um grande problema para recuperar as informações.",
+  "informacao": "Backups são essenciais para proteger dados importantes contra falhas de hardware, ataques cibernéticos e outros imprevistos. Ter um sistema de backup eficiente garante a continuidade das atividades e a segurança das informações.",
+  "impacto_esquerda": 1,
+  "impacto_direita": 0
+},
+{
+  "id":36,  
+  "personagem": "A Amiga",
+    "imagem": "img/amiga3.jpg",
+    "cor_fundo": "#abdce3",
+    "texto": "Sua amiga te mostra orgulhosa seu pendrive cheio de fotos de viagens e momentos especiais. Ela te conta que guarda todas as suas fotos lá. O que você faz?",
+    "texto_escolha_esquerda": "Explica para ela os riscos de guardar tudo em um único dispositivo e a importância de fazer backup em outros lugares, como na nuvem ou em um HD externo.",
+    "texto_escolha_direita": "Elogia a organização dela e diz que o pendrive parece ser bem seguro.",
+    "consequencia_esquerda": "Sua amiga se conscientiza dos riscos e decide fazer backup de suas fotos em outros dispositivos. Ela te agradece pelo conselho e se sente mais segura em relação às suas lembranças.",
+    "consequencia_direita": "Semanas depois, o pendrive da sua amiga para de funcionar e ela perde todas as suas fotos. Ela fica arrasada e se arrepende de não ter feito backup.",
+    "informacao": "Armazenar dados importantes em um único dispositivo é arriscado. Pendrives podem quebrar, serem perdidos ou roubados. Faça backup de seus arquivos em diferentes locais para garantir que suas informações estejam sempre seguras.",
+    "impacto_esquerda": 1,
+    "impacto_direita": 0
+  },
+  {
+    "id":37,
+    "personagem": "A Amiga",
+    "imagem": "img/amiga2.jpg",
+    "cor_fundo": "#abdce3",
+    "texto": "Sua amiga te conta que guarda todos os seus documentos importantes, como trabalhos da faculdade e fotos, no notebook dela. Ela não faz backup porque acha que não vai acontecer nada com o computador. O que você faz?",
+    "texto_escolha_esquerda": "Explica para ela o que é ransomware, um tipo de vírus que sequestra arquivos e exige pagamento para liberá-los, e a importância de fazer backups regulares para se proteger contra esse tipo de ataque.",
+    "texto_escolha_direita": "Diz que ela não precisa se preocupar, pois nunca ouviu falar de ninguém que tenha sido vítima de ransomware.",
+    "consequencia_esquerda": "Sua amiga entende o risco e decide fazer backup de seus arquivos em um HD externo e na nuvem. Ela te agradece pelo alerta e se sente mais segura em relação à proteção de seus dados.",
+    "consequencia_direita": "Semanas depois, o notebook da sua amiga é infectado por um ransomware. Ela perde todos os seus arquivos e não consegue recuperá-los. Ela se arrepende de não ter te escutado e feito backup.",
+    "informacao": "Ransomware é um tipo de malware que criptografa seus arquivos e exige pagamento em criptomoedas para liberá-los. Fazer backups regulares é a melhor forma de se proteger contra esse tipo de ataque, pois permite recuperar seus dados mesmo que o computador seja infectado.",
+    "impacto_esquerda": 1,
+    "impacto_direita": 0
+},
+{
+  "id":38,
+  "personagem": "A Influenciadora Digital",
+  "imagem": "img/youtuber_girl.jpg",
+  "cor_fundo": "#f08080",
+  "texto": "Sua amiga influenciadora digital te conta que está preocupada com a segurança da sua conta do Instagram, pois ela tem muitos seguidores e não quer perder o acesso. O que você sugere?",
+  "texto_escolha_esquerda": "Diz para ela criar uma senha forte e não compartilhá-la com ninguém.",
+  "texto_escolha_direita": "Recomenda que ela ative a autenticação em dois fatores (2FA), que adiciona uma camada extra de segurança à conta, exigindo um código enviado para o celular além da senha.",
+  "consequencia_esquerda": "Apesar da senha forte, a conta da sua amiga é invadida por hackers que conseguem descobrir a senha. Ela perde o acesso à conta e tem que começar tudo de novo.",
+  "consequencia_direita": "Sua amiga ativa a autenticação em dois fatores e sua conta fica muito mais segura. Mesmo que alguém descubra sua senha, não conseguirá acessar a conta sem o código do celular. Ela te agradece pela dica e se sente mais tranquila.",
+  "informacao": "A autenticação em dois fatores (2FA) é uma camada extra de segurança que protege suas contas online. Ao ativá-la, você precisará inserir um código enviado para seu celular ou e-mail além da senha para acessar sua conta. Isso dificulta o acesso de hackers, mesmo que eles descubram sua senha.",
+  "impacto_esquerda": 0,
+  "impacto_direita": 1
+},
+{
+  "id":39,
+  "personagem": "O Tecnológico",
+  "imagem": "img/tecnologico.jpg",
+  "cor_fundo": "#000080",
+  "texto": "Você acabou de instalar um novo roteador Wi-Fi em casa e o técnico te orienta a trocar a senha padrão do administrador. O que você faz?",
+  "texto_escolha_esquerda": "Ignora o conselho do técnico, afinal, a senha padrão parece ser forte o suficiente.",
+  "texto_escolha_direita": "Segue o conselho do técnico e troca a senha padrão por uma senha forte e única.",
+  "consequencia_esquerda": "Um hacker consegue invadir sua rede Wi-Fi utilizando a senha padrão do roteador. Ele rouba seus dados pessoais e usa sua internet para atividades ilegais.",
+  "consequencia_direita": "Sua rede Wi-Fi fica protegida contra invasões e seus dados pessoais permanecem seguros. Você navega na internet com tranquilidade, sabendo que sua rede está protegida.",
+  "informacao": "A senha padrão do roteador é facilmente encontrada na internet, tornando sua rede vulnerável a ataques. Trocar a senha por uma senha forte e única é essencial para proteger sua privacidade e segurança online.",
+  "impacto_esquerda": 0,
+  "impacto_direita": 1
+},
+{
+  "id":40,
+  "personagem": "O Amigo",
+  "imagem": "img/friend.jpg",
+  "cor_fundo": "#90ee90",
+  "texto": "Seu amigo te pergunta o que é uma VPN e por que ele deveria usar. Ele também quer saber como escolher uma VPN segura. O que você responde?",
+  "texto_escolha_esquerda": "Explica que VPN é apenas para hackers e que ele não precisa se preocupar com isso.",
+  "texto_escolha_direita": "Explica que VPN é uma rede virtual privada que criptografa sua conexão com a internet, protegendo seus dados de hackers e bisbilhoteiros. Recomenda que ele pesquise sobre VPNs confiáveis, com boa reputação e política de não registro de dados.",
+  "consequencia_esquerda": "Seu amigo continua navegando na internet sem proteção, tornando-se vulnerável a ataques e rastreamento de dados.",
+  "consequencia_direita": "Seu amigo pesquisa sobre VPNs e escolhe uma opção segura para proteger sua privacidade online. Ele te agradece pela dica e se sente mais seguro navegando na internet.",
+  "informacao": "Uma VPN (Virtual Private Network) é uma ferramenta essencial para proteger sua privacidade e segurança online. Ao escolher uma VPN, pesquise sobre a reputação da empresa, verifique se ela possui política de não registro de dados e se oferece recursos como criptografia forte e kill switch.",
+  "impacto_esquerda": 0,
+  "impacto_direita": 1
 }
+
+
 ]
