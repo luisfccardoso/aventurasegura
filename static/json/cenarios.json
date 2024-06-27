@@ -173,7 +173,7 @@
     "imagem": "img/amiga4.jpg",
     "cor_fundo": "#f2efde",
     "texto": "Sua amiga posta fotos de tudo o que faz, até mesmo informações pessoais. O que você faz nesta situação?",
-    "texto_escolha_esquerda": "Fala para ela que o que mais importa importa é ganhar novos seguidores.",
+    "texto_escolha_esquerda": "Fala para ela que o que mais importa é ganhar novos seguidores.",
     "texto_escolha_direita": "Mostra para ela exemplos de como informações pessoais podem ser usadas por pessoas mal-intencionadas.",
     "consequencia_esquerda": "Um criminoso utilizou as informações da sua amiga para personifica-la e está dando golpes em seus familiares!",
     "consequencia_direita": "Ela te agradece pelo alerta e começa a ser mais cuidadosa com suas informações.",
@@ -338,8 +338,8 @@
   "impacto_direita": 1
 },
 {
-  "personagem": "O Explorador de Mundos Virtuais",
-  "imagem": "img/explorador.jpg",
+  "personagem": "Gamer",
+  "imagem": "img/gamer.jpg",
   "cor_fundo": "#6a5acd",
   "texto": "Enquanto explora um novo mundo virtual, um jogador que você não conhece começa a te enviar mensagens privadas, perguntando sobre sua vida pessoal. O que você faz?",
   "texto_escolha_esquerda": "Responde às perguntas, contando detalhes sobre sua vida, afinal, ele parece legal.",
