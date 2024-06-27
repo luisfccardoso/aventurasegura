@@ -1,5 +1,4 @@
 import base64
-import random
 from flask import Flask, g, render_template, redirect, request, url_for, session
 from flask_talisman import Talisman
 import os
@@ -7,7 +6,7 @@ import json
 
 app = Flask(__name__, static_folder='static')
 
-app.secret_key = os.urandom(24)
+app.secret_key = "sajdjsuad08y37qww67685D%!afewjrh37rt7%¨dsda"
 
 def gerar_nonce():
     return base64.b64encode(os.urandom(16)).decode('utf-8')
@@ -62,7 +61,6 @@ def index():
 def historia():
     nonce = g.get('nonce', '')  
     session.clear()
-    random.shuffle(cenarios)
     session['cenario_atual'] = 1
     get_cenario(cenarios)
       
