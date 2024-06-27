@@ -7,7 +7,7 @@ import json
 
 app = Flask(__name__, static_folder='static')
 
-app.secret_key = "AHGDbfsajry4233dskdnmduh1232443dsajdjasjHJD"
+app.secret_key = os.urandom(24)
 
 def gerar_nonce():
     return base64.b64encode(os.urandom(16)).decode('utf-8')
