@@ -1,4 +1,5 @@
 import base64
+from random import randint
 from flask import Flask, g, render_template, redirect, request, url_for, session
 from flask_talisman import Talisman
 import os
@@ -61,7 +62,7 @@ def index():
 def historia():
     nonce = g.get('nonce', '')  
     session.clear()
-    session['cenario_atual'] = 1
+    session['cenario_atual'] = randint(1, 30)
     get_cenario(cenarios)
       
     if request.method == 'POST':
@@ -99,7 +100,7 @@ def jogos():
                 return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenario_atual']-1,mensagem_feedback=session['consequencia_direita'],titulo_feedback="Tente Novamente!")
 
     session['pontuacao'] = 0
-    session['cenario_atual'] = 1
+    session['cenario_atual'] = randint(1, 30)
 
     return render_template('jogo.html', texto_escolha_direita=session['texto_escolha_direita'], texto_escolha_esquerda=session['texto_escolha_esquerda'], texto=session['texto'], imagem=session['imagem'], personagem=session['personagem'], pontuacao=session['pontuacao'], nonce=nonce, cenario_numero=session['cenario_atual'])
 
