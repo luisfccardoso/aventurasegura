@@ -1,5 +1,6 @@
 [
   {
+    "id":1,
     "personagem": "A Amiga",
     "imagem": "img/amiga.jpg",
     "cor_fundo": "#abdce3",
@@ -13,6 +14,7 @@
     "impacto_direita": 0
   },
   {
+    "id":2,
     "personagem": "O Amigo",
     "imagem": "img/vitima_cyberbullyng.jpg",
     "cor_fundo": "#abdce3",
@@ -26,6 +28,7 @@
     "impacto_direita": 1
   },
   {
+    "id":3,
     "personagem": "A Amiga",
     "imagem": "img/amiga.jpg",
     "cor_fundo": "#abdce3",
@@ -39,6 +42,7 @@
     "impacto_direita": 0
   },
   {
+    "id":4,
     "personagem": "Gamer",
     "imagem": "img/gamer.jpg",
     "cor_fundo": "#f89226",
@@ -52,6 +56,7 @@
     "impacto_direita": 1
   },
   {
+    "id":5,
     "personagem": "A mãe",
     "imagem": "img/mae2.jpg",
     "cor_fundo": "f9f3e7",
@@ -65,6 +70,7 @@
     "impacto_direita": 0
   },
   {
+    "id":6,
     "personagem": "A professora",
     "imagem": "img/professora.jpg",
     "cor_fundo": "f9f3e7",
@@ -78,6 +84,7 @@
     "impacto_direita": 1
   },
   {
+    "id":7,
     "personagem": "A amiga",
     "imagem": "img/amiga.jpg",
     "cor_fundo": "#abdce3",
@@ -91,6 +98,7 @@
     "impacto_direita": 0
   },
   {
+    "id":8,
     "personagem": "O Tecnológico",
     "imagem": "img/tecnologico.jpg",
     "cor_fundo": "#FB4327",
@@ -104,6 +112,7 @@
     "impacto_direita": 0
   },
   {
+    "id":9,
     "personagem": "O Tecnológico",
     "imagem": "img/tecnologico.jpg",
     "cor_fundo": "#FB4327",
@@ -117,6 +126,7 @@
     "impacto_direita": 1
   },
   {
+    "id":10,
     "personagem": "Gamer",
     "imagem": "img/gamer.jpg",
     "cor_fundo": "#FB4327",
@@ -130,6 +140,7 @@
     "impacto_direita": 1
   },
   {
+    "id":11,
     "personagem": "O Avô",
     "imagem": "img/avo.jpg",
     "cor_fundo": "#f2efde",
@@ -143,6 +154,7 @@
     "impacto_direita": 0
   },
   {
+    "id":12,
     "personagem": "A Desligada Digital",
     "imagem": "img/professora.jpg",
     "cor_fundo": "#f9f3e7",
@@ -156,6 +168,7 @@
     "impacto_direita": 0
   }, 
   {
+    "id":13,
     "personagem": "O Avô",
     "imagem": "img/avo.jpg",
     "cor_fundo": "#f2efde",
@@ -169,6 +182,7 @@
     "impacto_direita": 0 
   },
   {
+    "id":14,
     "personagem": "A Social",
     "imagem": "img/amiga4.jpg",
     "cor_fundo": "#f2efde",
@@ -182,6 +196,7 @@
     "impacto_direita": 1
   },
   {
+    "id":15,
     "personagem": "A avó",
     "imagem": "img/avo3.jpg",
     "cor_fundo": "#c7f0db",
@@ -195,6 +210,7 @@
     "impacto_direita": 0
   },
   {
+    "id":16,
     "personagem": "O Bully",
     "imagem": "img/Cyberbullying.jpg",
     "cor_fundo": "#f2d7d5",
@@ -208,6 +224,7 @@
     "impacto_direita": 1
   },
   {
+    "id":17,
     "personagem": "A Professora",
     "imagem": "img/professora.jpg",
     "cor_fundo": "#d9e3f0",
@@ -221,6 +238,7 @@
     "impacto_direita": 0
   },
   {
+    "id":18,
     "personagem": "O Esquecido",
     "imagem": "img/tio.jpg",
     "cor_fundo": "#f2e5d5",
@@ -234,6 +252,7 @@
     "impacto_direita": 0
   },
   {
+    "id":19,
     "personagem": "A Viajante",
     "imagem": "img/youtuber_girl.jpg",
     "cor_fundo": "#d5e8d4",
@@ -247,6 +266,7 @@
     "impacto_direita": 1
   },
   {
+    "id":20,
     "personagem": "O Youtuber",
     "imagem": "img/youtuber.jpg",
     "cor_fundo": "#ffa500",
@@ -260,6 +280,7 @@
     "impacto_direita": 0
 },
 {
+  "id":21,
   "personagem": "A Vítima do Bullying",
   "imagem": "img/vitima_cyberbullyng.jpg",
   "cor_fundo": "#808080",
@@ -273,6 +294,7 @@
   "impacto_direita": 0
 },
 {
+  "id":22,
   "personagem": "O Youtuber",
   "imagem": "img/youtuber.jpg",
   "cor_fundo": "#ff69b4",
@@ -286,6 +308,7 @@
   "impacto_direita": 1
 },
 {
+  "id":23,
   "personagem": "O Estagiário",
   "imagem": "img/investigador.jpg",
   "cor_fundo": "#f0e68c",
@@ -299,6 +322,7 @@
   "impacto_direita": 1
 },
 {
+  "id":24,
   "personagem": "O Diretor",
   "imagem": "img/diretor.jpg",
   "cor_fundo": "#8b4513", 
@@ -312,6 +336,7 @@
   "impacto_direita": 1
 },
 {
+  "id":25,
   "personagem": "Gamer",
   "imagem": "img/gamer.jpg",
   "cor_fundo": "#ffd700",
@@ -325,6 +350,7 @@
   "impacto_direita": 1
 },
 {
+  "id":26,
   "personagem": "Gamer",
   "imagem": "img/gamer.jpg",
   "cor_fundo": "#800000",
@@ -338,6 +364,7 @@
   "impacto_direita": 1
 },
 {
+  "id":27,
   "personagem": "Gamer",
   "imagem": "img/gamer.jpg",
   "cor_fundo": "#6a5acd",
@@ -351,6 +378,7 @@
   "impacto_direita": 1
 },
 {
+  "id":28,
   "personagem": "O Avô",
   "imagem": "img/avo.jpg",
   "cor_fundo": "#dc143c",
@@ -364,6 +392,7 @@
   "impacto_direita": 1
 },
 {
+  "id":29,
   "personagem": "O Sortudo",
   "imagem": "img/scomputer scientist_boy.jpg",
   "cor_fundo": "#ffff00",
@@ -377,6 +406,7 @@
   "impacto_direita": 1
 },
 {
+  "id":30,
   "personagem": "O Desempregado",
   "imagem": "img/scomputer scientist_boy.jpg",
   "cor_fundo": "#008000",
@@ -390,6 +420,7 @@
   "impacto_direita": 1
 },
 {
+  "id":31,
   "personagem": "O Avô",
   "imagem": "img/avo.jpg",
   "cor_fundo": "#d2b48c",
@@ -403,6 +434,7 @@
   "impacto_direita": 1
 },
 {
+  "id":32,
   "personagem": "A Amiga",
   "imagem": "img/amiga3.jpg",
   "cor_fundo": "#abdce3",
@@ -414,5 +446,33 @@
   "informacao": "Golpistas podem se passar por chefes e colegas de trabalho para solicitar transferências via PIX. Sempre confirme a informação por outro canal antes de realizar qualquer transação.",
   "impacto_esquerda": 0,
   "impacto_direita": 1
+},
+{
+  "id":33,
+  "personagem": "O Apressado",
+  "imagem": "img/scomputer scientist_boy.jpg",
+  "cor_fundo": "#000000",
+  "texto": "Seu computador avisa que há uma atualização importante do sistema operacional disponível, mas você está ocupado e decide adiar. O que você faz?",
+  "texto_escolha_esquerda": "Ignora a atualização e continua trabalhando, afinal, você não tem tempo para isso agora.",
+  "texto_escolha_direita": "Interrompe o que está fazendo e instala a atualização, sabendo que ela pode conter correções de segurança importantes.",
+  "consequencia_esquerda": "Seu computador é infectado por um malware que explora uma vulnerabilidade que foi corrigida na atualização. Seus dados são roubados e você perde horas de trabalho.",
+  "consequencia_direita": "Seu computador fica protegido contra a vulnerabilidade e você pode trabalhar tranquilo, sabendo que seus dados estão seguros.",
+  "informacao": "Manter o sistema operacional atualizado é fundamental para proteger seu computador contra ameaças de segurança. As atualizações corrigem vulnerabilidades que podem ser exploradas por hackers e malware.",
+  "impacto_esquerda": 0,
+  "impacto_direita": 1
+},
+{
+  "id":34,
+  "personagem": "A Mãe",
+  "imagem": "img/mae.jpg",
+  "cor_fundo": "#ffb6c1",
+  "texto": "Sua mãe está preocupada com a segurança das fotos e vídeos da família que estão armazenados no computador. Ela te pergunta se é necessário fazer backup desses arquivos. O que você responde?",
+  "texto_escolha_esquerda": "Explica que fazer backup é muito importante para proteger as memórias da família e a ajuda a escolher a melhor forma de fazer isso, como usar um HD externo ou um serviço de armazenamento em nuvem.",
+  "texto_escolha_direita": "Diz que não precisa se preocupar, pois o computador é novo e não vai quebrar.",
+  "consequencia_esquerda": "Sua mãe fica aliviada e agradecida pela sua ajuda. Ela faz o backup das fotos e vídeos e se sente mais segura em relação à preservação das memórias da família.",
+  "consequencia_direita": "O computador da sua mãe quebra e ela perde todas as fotos e vídeos da família. Ela fica arrasada e se arrepende de não ter feito backup.",
+  "informacao": "Fotos e vídeos de família são memórias preciosas que devem ser protegidas. Faça backups regulares desses arquivos para garantir que eles não sejam perdidos para sempre.",
+  "impacto_esquerda": 1,
+  "impacto_direita": 0
 }
 ]
