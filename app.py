@@ -81,13 +81,13 @@ def jogos():
                 session['cenario_atual'] += 1
                 session['cenarios'] += 1
                 
-                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenario_atual']-1,mensagem_feedback=session['consequencia_esquerda'],titulo_feedback="Acertou!")
+                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenarios']-1,mensagem_feedback=session['consequencia_esquerda'],titulo_feedback="Acertou!")
 
             else:
                 session['cenario_atual'] += 1
                 session['cenarios'] += 1
                 
-                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenario_atual']-1,mensagem_feedback=session['consequencia_esquerda'],titulo_feedback="Tente novamente!")
+                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenarios']-1,mensagem_feedback=session['consequencia_esquerda'],titulo_feedback="Tente novamente!")
 
         else:
             if session['impacto_direita'] == 1:
@@ -95,19 +95,19 @@ def jogos():
                 session['cenario_atual'] += 1
                 session['cenarios'] += 1
                 
-                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenario_atual']-1,mensagem_feedback=session['consequencia_direita'],titulo_feedback="Acertou!")
+                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenarios']-1,mensagem_feedback=session['consequencia_direita'],titulo_feedback="Acertou!")
 
             else:
                 session['cenario_atual'] += 1
                 session['cenarios'] += 1
                 
-                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenario_atual']-1,mensagem_feedback=session['consequencia_direita'],titulo_feedback="Tente Novamente!")
+                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenarios']-1,mensagem_feedback=session['consequencia_direita'],titulo_feedback="Tente Novamente!")
 
     session['pontuacao'] = 0
     session['cenario_atual'] = randint(1, 30)
     session['cenarios'] = 1
 
-    return render_template('jogo.html', texto_escolha_direita=session['texto_escolha_direita'], texto_escolha_esquerda=session['texto_escolha_esquerda'], texto=session['texto'], imagem=session['imagem'], personagem=session['personagem'], pontuacao=session['pontuacao'], nonce=nonce, cenario_numero=session['cenario_atual'])
+    return render_template('jogo.html', texto_escolha_direita=session['texto_escolha_direita'], texto_escolha_esquerda=session['texto_escolha_esquerda'], texto=session['texto'], imagem=session['imagem'], personagem=session['personagem'], pontuacao=session['pontuacao'], nonce=nonce, cenario_numero=session['cenarios'])
 
 @app.route('/consequencia', methods=['GET', 'POST'])
 def consequencia():
@@ -136,13 +136,13 @@ def jogo():
                 session['cenario_atual'] += 1
                 session['cenarios'] += 1
                 
-                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenario_atual']-1,mensagem_feedback=session['consequencia_esquerda'],titulo_feedback="Acertou!")
+                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenarios']-1,mensagem_feedback=session['consequencia_esquerda'],titulo_feedback="Acertou!")
 
             else:
                 session['cenario_atual'] += 1
                 session['cenarios'] += 1
                 
-                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenario_atual']-1,mensagem_feedback=session['consequencia_esquerda'],titulo_feedback="Tente novamente!")
+                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenarios']-1,mensagem_feedback=session['consequencia_esquerda'],titulo_feedback="Tente novamente!")
 
         else:
             if session['impacto_direita'] == 1:
@@ -150,15 +150,15 @@ def jogo():
                 session['cenario_atual'] += 1
                 session['cenarios'] += 1
                 
-                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenario_atual']-1,mensagem_feedback=session['consequencia_direita'],titulo_feedback="Acertou!")
+                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenarios']-1,mensagem_feedback=session['consequencia_direita'],titulo_feedback="Acertou!")
 
             else:
                 session['cenario_atual'] += 1
                 session['cenarios'] += 1
                 
-                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenario_atual']-1,mensagem_feedback=session['consequencia_direita'],titulo_feedback="Tente Novamente!")
+                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenarios']-1,mensagem_feedback=session['consequencia_direita'],titulo_feedback="Tente Novamente!")
         
-    return render_template('jogo.html', texto_escolha_direita=session['texto_escolha_direita'], texto_escolha_esquerda=session['texto_escolha_esquerda'], texto=session['texto'], imagem=session['imagem'], personagem=session['personagem'], pontuacao=session['pontuacao'], nonce=nonce, cenario_numero=session['cenario_atual'])
+    return render_template('jogo.html', texto_escolha_direita=session['texto_escolha_direita'], texto_escolha_esquerda=session['texto_escolha_esquerda'], texto=session['texto'], imagem=session['imagem'], personagem=session['personagem'], pontuacao=session['pontuacao'], nonce=nonce, cenario_numero=session['cenarios'])
 
 @app.route('/fim')
 def fim():
