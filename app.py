@@ -37,6 +37,21 @@ with open(os.path.join(app.static_folder + '/json', 'cenarios.json'), 'r', encod
 with open(os.path.join(app.static_folder + '/json', 'perfis.json'), 'r', encoding='utf-8') as f:
     perfis = json.load(f)
 
+def get_cenario(cenarios):
+    random.shuffle(cenarios)
+    cenario = cenarios[1]
+
+    session['id'] = cenario['id']
+    session['personagem'] = cenario['personagem']
+    session['imagem'] = cenario['imagem']
+    session['texto'] = cenario['texto']
+    session['texto_escolha_esquerda'] = cenario['texto_escolha_esquerda']
+    session['texto_escolha_direita'] = cenario['texto_escolha_direita']
+    session['consequencia_esquerda'] = cenario['consequencia_esquerda']
+    session['consequencia_direita'] = cenario['consequencia_direita']
+    session['impacto_direita'] = cenario['impacto_direita']
+    session['impacto_esquerda'] = cenario['impacto_esquerda']
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     nonce = g.get('nonce', '')
@@ -48,6 +63,7 @@ def index():
 def historia():
     nonce = g.get('nonce', '')  
     session.clear()
+    get_cenario(cenarios)
       
     if request.method == 'POST':
         return redirect(url_for('jogos'))
@@ -58,86 +74,82 @@ def jogos():
     nonce = g.get('nonce', '')  
 
     if request.method == 'POST':
-        cenario = cenarios[1]
 
         if request.form['opcao'] == 'esquerda':
-            impacto = cenario['impacto_esquerda']
-            if impacto == 1:
-                mensagem_feedback = cenario['consequencia_esquerda']
-                titulo_feedback = "Acertou"
-            else:
-                mensagem_feedback = cenario['consequencia_esquerda']
-                titulo_feedback = "Tente de novo!"
-        else:
-            impacto = cenario['impacto_direita']
-            if impacto == 1:
-                mensagem_feedback = cenario['consequencia_direita']
-                titulo_feedback = "Acertou"
-            else:
-                mensagem_feedback = cenario['consequencia_direita']
-                titulo_feedback = "Tente de novo!"
+            if session['impacto_esquerda'] == 1:
+                session['pontuacao'] += 1
+                session['cenario_atual'] += 1
                 
-        session['pontuacao'] += impacto
-        session['cenario_atual'] += 1
-        
-        return render_template('consequencia.html', cenario=cenario, nonce=nonce, cenario_numero=session['cenario_atual']-1,mensagem_feedback=mensagem_feedback,titulo_feedback=titulo_feedback)
-    
+                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenario_atual']-1,mensagem_feedback=session['consequencia_esquerda'],titulo_feedback="Acertou!")
+
+            else:
+                session['cenario_atual'] += 1
+                
+                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenario_atual']-1,mensagem_feedback=session['consequencia_esquerda'],titulo_feedback="Tente novamente!")
+
+        else:
+            if session['impacto_direita'] == 1:
+                session['pontuacao'] += 1
+                session['cenario_atual'] += 1
+                
+                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenario_atual']-1,mensagem_feedback=session['consequencia_direita'],titulo_feedback="Acertou!")
+
+            else:
+                session['cenario_atual'] += 1
+                
+                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenario_atual']-1,mensagem_feedback=session['consequencia_direita'],titulo_feedback="Tente Novamente!")
+
     session['pontuacao'] = 0
     session['cenario_atual'] = 1
-    random.shuffle(cenarios)
-    cenario = cenarios[1]
-    print('print 2')
-    return render_template('jogo.html', cenario=cenario, pontuacao=session['pontuacao'], nonce=nonce, cenario_numero=session['cenario_atual'])
+
+    return render_template('jogo.html', texto_escolha_direita=session['texto_escolha_direita'], texto_escolha_esquerda=session['texto_escolha_esquerda'], texto=session['texto'], imagem=session['imagem'], personagem=session['personagem'], pontuacao=session['pontuacao'], nonce=nonce, cenario_numero=session['cenario_atual'])
 
 @app.route('/consequencia', methods=['GET', 'POST'])
 def consequencia():
-    nonce = g.get('nonce', '')  
-
     if request.method == 'POST':
         return redirect(url_for('jogo'))
-
-    return render_template('consequencia.html', nonce=nonce)
 
 @app.route('/jogo', methods=['GET', 'POST'])
 def jogo():
     nonce = g.get('nonce', '')
+    get_cenario(cenarios)
+
     if 'pontuacao' not in session:
         return redirect(url_for('historia'), code=302)
     
-    cenario = cenarios[session['cenario_atual']]
-
     if session['cenario_atual'] > 10:
-        pontuacao = session['pontuacao']
         for contador in range(11):
-            if pontuacao == contador:
+            if session['pontuacao'] == contador:
                 perfil = perfis[contador]
                 break
-        return render_template('fim.html', pontuacao=pontuacao, nonce=nonce, perfil=perfil)
+        return render_template('fim.html', pontuacao=session['pontuacao'], nonce=nonce, perfil=perfil)
 
     if request.method == 'POST':
         if request.form['opcao'] == 'esquerda':
-            impacto = cenario['impacto_esquerda']
-            if impacto == 1:
-                mensagem_feedback = cenario['consequencia_esquerda']
-                titulo_feedback = "Acertou"
+            if session['impacto_esquerda'] == 1:
+                session['pontuacao'] += 1
+                session['cenario_atual'] += 1
+                
+                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenario_atual']-1,mensagem_feedback=session['consequencia_esquerda'],titulo_feedback="Acertou!")
+
             else:
-                mensagem_feedback = cenario['consequencia_esquerda']
-                titulo_feedback = "Tente de novo!"
+                session['cenario_atual'] += 1
+                
+                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenario_atual']-1,mensagem_feedback=session['consequencia_esquerda'],titulo_feedback="Tente novamente!")
+
         else:
-            impacto = cenario['impacto_direita']
-            if impacto == 1:
-                mensagem_feedback = cenario['consequencia_direita']
-                titulo_feedback = "Acertou"
+            if session['impacto_direita'] == 1:
+                session['pontuacao'] += 1
+                session['cenario_atual'] += 1
+                
+                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenario_atual']-1,mensagem_feedback=session['consequencia_direita'],titulo_feedback="Acertou!")
+
             else:
-                mensagem_feedback = cenario['consequencia_direita']
-                titulo_feedback = "Tente de novo!"
+                session['cenario_atual'] += 1
+                
+                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenario_atual']-1,mensagem_feedback=session['consequencia_direita'],titulo_feedback="Tente Novamente!")
         
-        session['pontuacao'] += impacto
-        session['cenario_atual'] += 1
-
-        return render_template('consequencia.html', cenario=cenario, nonce=nonce, cenario_numero=session['cenario_atual']-1,mensagem_feedback=mensagem_feedback,titulo_feedback=titulo_feedback)
-
-    return render_template('jogo.html', cenario=cenario, pontuacao=session['pontuacao'], nonce=nonce, cenario_numero=session['cenario_atual'])
+    return render_template('jogo.html', texto_escolha_direita=session['texto_escolha_direita'], texto_escolha_esquerda=session['texto_escolha_esquerda'], texto=session['texto'], imagem=session['imagem'], personagem=session['personagem'], pontuacao=session['pontuacao'], nonce=nonce, cenario_numero=session['cenario_atual'])
 
 @app.route('/fim')
 def fim():

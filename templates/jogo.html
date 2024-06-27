@@ -2,15 +2,15 @@
 {% block title %}Aventura Segura: Jogo - Cenário {{ cenario_numero }}{% endblock %}
 {% block content %}
 <div class="div-dentro">
-    <h1 class="titulo texto">{{ cenario.personagem }}</h1>
-    <img style="display: block; margin-left: auto; margin-right: auto;" width="150px" src="{{ url_for('static', filename=cenario.imagem) }}" alt="{{ cenario.personagem }}">
-    <p class="texto" style="overflow-y: auto;max-height: 95px;">{{ cenario.texto }}</p>
+    <h1 class="titulo texto">{{ personagem }}</h1>
+    <img style="display: block; margin-left: auto; margin-right: auto;" width="150px" src="{{ url_for('static', filename=imagem) }}" alt="{{ personagem }}">
+    <p class="texto" style="overflow-y: auto;max-height: 95px;">{{ texto }}</p>
     <div class="div-dentro">
         <form method="POST" class="texto">
             <p>Escolha:</p>
-            <button type="submit" name="opcao" value="esquerda" class="btn btn-primary" style="margin-bottom: 10px">{{ cenario.texto_escolha_esquerda }}</button>
+            <button type="submit" name="opcao" value="esquerda" class="btn btn-primary" style="margin-bottom: 10px">{{ texto_escolha_esquerda }}</button>
             <p>ou</p>
-            <button type="submit" name="opcao" value="direita" class="btn btn-primary">{{ cenario.texto_escolha_direita }}</button>
+            <button type="submit" name="opcao" value="direita" class="btn btn-primary">{{ texto_escolha_direita }}</button>
         </form>
     </div>
     <div class="texto">Pontuação: {{ pontuacao }}</div>

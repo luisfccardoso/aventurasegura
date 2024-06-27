@@ -394,7 +394,7 @@
 {
   "id":29,
   "personagem": "O Sortudo",
-  "imagem": "img/scomputer scientist_boy.jpg",
+  "imagem": "img/computer scientist_boy.jpg",
   "cor_fundo": "#ffff00",
   "texto": "Você recebe uma mensagem parabenizando você por ter ganhado um prêmio incrível em um sorteio que você nem se lembra de ter participado. Para receber o prêmio, você precisa clicar em um link e fornecer seus dados pessoais. O que você faz?",
   "texto_escolha_esquerda": "Clica no link e fornece seus dados, empolgado com a possibilidade de ter ganhado um prêmio.",
@@ -408,7 +408,7 @@
 {
   "id":30,
   "personagem": "O Desempregado",
-  "imagem": "img/scomputer scientist_boy.jpg",
+  "imagem": "img/computer scientist_boy.jpg",
   "cor_fundo": "#008000",
   "texto": "Você recebe uma mensagem de uma empresa oferecendo uma vaga de emprego com salário alto e benefícios incríveis. Para se candidatar, você precisa pagar uma taxa de inscrição. O que você faz?",
   "texto_escolha_esquerda": "Paga a taxa de inscrição, esperançoso de conseguir o emprego dos sonhos.",
@@ -450,7 +450,7 @@
 {
   "id":33,
   "personagem": "O Apressado",
-  "imagem": "img/scomputer scientist_boy.jpg",
+  "imagem": "img/computer scientist_boy.jpg",
   "cor_fundo": "#000000",
   "texto": "Seu computador avisa que há uma atualização importante do sistema operacional disponível, mas você está ocupado e decide adiar. O que você faz?",
   "texto_escolha_esquerda": "Ignora a atualização e continua trabalhando, afinal, você não tem tempo para isso agora.",
