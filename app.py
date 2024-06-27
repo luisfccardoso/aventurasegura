@@ -79,11 +79,13 @@ def jogos():
             if session['impacto_esquerda'] == 1:
                 session['pontuacao'] += 1
                 session['cenario_atual'] += 1
+                session['cenarios'] += 1
                 
                 return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenario_atual']-1,mensagem_feedback=session['consequencia_esquerda'],titulo_feedback="Acertou!")
 
             else:
                 session['cenario_atual'] += 1
+                session['cenarios'] += 1
                 
                 return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenario_atual']-1,mensagem_feedback=session['consequencia_esquerda'],titulo_feedback="Tente novamente!")
 
@@ -91,16 +93,19 @@ def jogos():
             if session['impacto_direita'] == 1:
                 session['pontuacao'] += 1
                 session['cenario_atual'] += 1
+                session['cenarios'] += 1
                 
                 return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenario_atual']-1,mensagem_feedback=session['consequencia_direita'],titulo_feedback="Acertou!")
 
             else:
                 session['cenario_atual'] += 1
+                session['cenarios'] += 1
                 
                 return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenario_atual']-1,mensagem_feedback=session['consequencia_direita'],titulo_feedback="Tente Novamente!")
 
     session['pontuacao'] = 0
     session['cenario_atual'] = randint(1, 30)
+    session['cenarios'] = 1
 
     return render_template('jogo.html', texto_escolha_direita=session['texto_escolha_direita'], texto_escolha_esquerda=session['texto_escolha_esquerda'], texto=session['texto'], imagem=session['imagem'], personagem=session['personagem'], pontuacao=session['pontuacao'], nonce=nonce, cenario_numero=session['cenario_atual'])
 
@@ -117,7 +122,7 @@ def jogo():
     if 'pontuacao' not in session:
         return redirect(url_for('historia'), code=302)
     
-    if session['cenario_atual'] > 10:
+    if session['cenarios'] > 10:
         for contador in range(11):
             if session['pontuacao'] == contador:
                 perfil = perfis[contador]
@@ -129,11 +134,13 @@ def jogo():
             if session['impacto_esquerda'] == 1:
                 session['pontuacao'] += 1
                 session['cenario_atual'] += 1
+                session['cenarios'] += 1
                 
                 return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenario_atual']-1,mensagem_feedback=session['consequencia_esquerda'],titulo_feedback="Acertou!")
 
             else:
                 session['cenario_atual'] += 1
+                session['cenarios'] += 1
                 
                 return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenario_atual']-1,mensagem_feedback=session['consequencia_esquerda'],titulo_feedback="Tente novamente!")
 
@@ -141,11 +148,13 @@ def jogo():
             if session['impacto_direita'] == 1:
                 session['pontuacao'] += 1
                 session['cenario_atual'] += 1
+                session['cenarios'] += 1
                 
                 return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenario_atual']-1,mensagem_feedback=session['consequencia_direita'],titulo_feedback="Acertou!")
 
             else:
                 session['cenario_atual'] += 1
+                session['cenarios'] += 1
                 
                 return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenario_atual']-1,mensagem_feedback=session['consequencia_direita'],titulo_feedback="Tente Novamente!")
         
