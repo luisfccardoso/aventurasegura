@@ -1,9 +1,9 @@
 import base64
-from random import randint
+from random import randint, choice
 from flask import Flask, g, render_template, redirect, request, url_for, session
 from flask_talisman import Talisman
 import os
-import json
+import json 
 
 app = Flask(__name__, static_folder='static')
 
@@ -53,10 +53,17 @@ def get_cenario(cenarios):
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    nonce = g.get('nonce', '')
+    nnonce = g.get('nonce', '')
+    # Escolhe aleatoriamente entre as versões A e B
+    versao = choice(['a', 'b'])
+    session['versao_index'] = versao  # Armazena a versão na sessão
+
     if request.method == 'POST':
         return redirect(url_for('historia'))
-    return render_template('index.html', nonce=nonce)
+    # Acessa o nonce definido no contexto global (g)
+    nonce = g.nonce 
+    return render_template(f'index_{versao}.html', nonce=nonce)
+
 
 @app.route('/historia', methods=['GET', 'POST'])
 def historia():

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Aventura Segura: Seja bem-vindo!{% endblock %}
+{% block content %}
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XMG8KFD0CB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XMG8KFD0CB', {
+    'page_title' : 'index_a' // ou 'index_b' dependendo da versão
+  });
+  console.log("escript rodou!");
+</script>
+<div class="div-dentro">
+    <img style="display: block; margin-left: auto; margin-right: auto;" width="240px" src="static/img/logo.png" alt="Aventura Segura">
+    <h3 class="titulo texto">Um jogo sobre segurança na Internet!</h3>
+    <form method="post">
+        <button type="submit" class="btn btn-primary" onclick="gtag('event', 'click', {'event_category': 'index', 'event_label': 'versao_a'})">Clique aqui para jogar!</button>
+    </form>
+</div>
+{% endblock %}
