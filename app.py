@@ -53,15 +53,14 @@ def get_cenario(cenarios):
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    nnonce = g.get('nonce', '')
+    nonce = g.get('nonce', '')
     # Escolhe aleatoriamente entre as versões A e B
     versao = choice(['a', 'b'])
     session['versao_index'] = versao  # Armazena a versão na sessão
 
     if request.method == 'POST':
         return redirect(url_for('historia'))
-    # Acessa o nonce definido no contexto global (g)
-    nonce = g.nonce 
+   
     return render_template(f'index_{versao}.html', nonce=nonce)
 
 
