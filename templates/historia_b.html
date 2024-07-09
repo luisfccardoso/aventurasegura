@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Aventura Segura: História B{% endblock %}
+{% block content %}
+<div class="div-dentro">
+    <img style="display: block; margin-left: auto; margin-right: auto;" width="200px" src="static/img/investigador.jpg" alt="Aventura Segura">
+    <p class="texto">A internet cada vez mais faz parte das nossas vidas. <br><br>Será que você está preparado para encarar seus desafios?<br><br> Clique no botão abaixo para testar seus conhecimentos sobre o uso da Internet.</p>
+    <form method="post">
+        <input type="hidden" name="cenario_num" value="1" style="display: none;">
+        <button type="submit" class="btn btn-primary">Começar!</button>
+    </form>
+</div>
+{% endblock %}

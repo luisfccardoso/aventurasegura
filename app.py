@@ -59,13 +59,14 @@ def index():
     session['versao_index'] = versao  # Armazena a versão na sessão
 
     if request.method == 'POST':
-        return redirect(url_for('historia'))
+        # Redireciona para a URL  baseada na versão
+        return redirect(url_for(f'historia_{versao}'))
    
     return render_template(f'index_{versao}.html', nonce=nonce)
 
 
-@app.route('/historia', methods=['GET', 'POST'])
-def historia():
+@app.route('/historia_a', methods=['GET', 'POST'])
+def historia_a():
     nonce = g.get('nonce', '')  
     session.clear()
     session['cenario_atual'] = randint(1, 30)
@@ -73,7 +74,19 @@ def historia():
       
     if request.method == 'POST':
         return redirect(url_for('jogos'))
-    return render_template('historia.html', nonce=nonce)
+    return render_template('historia_a.html', nonce=nonce)
+
+@app.route('/historia_b', methods=['GET', 'POST'])
+def historia_b():
+    nonce = g.get('nonce', '')  
+    session.clear()
+    session['cenario_atual'] = randint(1, 30)
+    get_cenario(cenarios)
+      
+    if request.method == 'POST':
+        return redirect(url_for('jogos'))
+    return render_template('historia_b.html', nonce=nonce)
+
 
 @app.route('/jogos', methods=['GET', 'POST'])
 def jogos():
