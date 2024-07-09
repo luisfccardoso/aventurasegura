@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Aventura Segura - Obrigador por Compartilhar!{% endblock %}
+
+{% block content %}
+<div class="div-dentro">
+    <h1 class="titulo texto">Obrigado por compartilhar!</h1>
+    <img style="display: block; margin-left: auto; margin-right: auto;" width="150px" src="{{ url_for('static', filename=perfil.imagem) }}" alt="{{ perfil.titulo }}">
+    <h1 class="titulo texto">{{ perfil.titulo }}</h1>
+    <p class="texto">{{ perfil.descricao }} <br><br> <strong>Sua pontuação final é: {{ pontuacao }}</strong></p>
+    <a href="{{ url_for('historia') }}" class="btn btn-primary" style="margin: 10px;">Jogar outros cenários!</a>
+</div>
+{% endblock %}
