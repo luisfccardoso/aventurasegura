@@ -52,6 +52,7 @@ def get_cenario(cenarios):
     session['consequencia_direita'] = cenario['consequencia_direita']
     session['impacto_direita'] = cenario['impacto_direita']
     session['impacto_esquerda'] = cenario['impacto_esquerda']
+    session['meio'] = ""
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -59,12 +60,13 @@ def index():
     # Escolhe aleatoriamente entre as versões A e B
     versao = choice(['a', 'b'])
     session['versao_index'] = versao  # Armazena a versão na sessão
+    session['meio'] = session['meio'] = request.args.get('meio', ' ')
 
     if request.method == 'POST':
         # Redireciona para a URL  baseada na versão
         return redirect(url_for(f'historia_{versao}'))
    
-    return render_template(f'index_{versao}.html', nonce=nonce)
+    return render_template(f'index_{versao}.html', nonce=nonce, meio = session['meio'])
 
 
 @app.route('/historia', methods=['GET', 'POST'])
