@@ -39,6 +39,7 @@ with open(os.path.join(app.static_folder + '/json', 'perfis.json'), 'r', encodin
 
 def get_cenario(cenarios):
     
+    
     cenario = cenarios[session['cenario_atual'] ]
 
     session['id'] = cenario['id']
@@ -70,7 +71,7 @@ def index():
 def historia():
     nonce = g.get('nonce', '')  
     session.clear()
-    session['cenario_atual'] = randint(1, 39)
+    session['cenario_atual'] = randint(1, len(cenarios) - 1)
     get_cenario(cenarios)
       
     if request.method == 'POST':
@@ -81,7 +82,7 @@ def historia():
 def historia_a():
     nonce = g.get('nonce', '')  
     session.clear()
-    session['cenario_atual'] = randint(1, 39)
+    session['cenario_atual'] = randint(1, len(cenarios) - 1)
     get_cenario(cenarios)
       
     if request.method == 'POST':
@@ -92,7 +93,7 @@ def historia_a():
 def historia_b():
     nonce = g.get('nonce', '')  
     session.clear()
-    session['cenario_atual'] = randint(1, 39)
+    session['cenario_atual'] = randint(1, len(cenarios) - 1)
     get_cenario(cenarios)
       
     if request.method == 'POST':
@@ -109,33 +110,34 @@ def jogos():
         if request.form['opcao'] == 'esquerda':
             if session['impacto_esquerda'] == 1:
                 session['pontuacao'] += 1
-                session['cenario_atual'] += 1
+                session['cenario_atual'] = randint(1, len(cenarios) - 1)
                 session['cenarios'] += 1
                 
-                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenarios']-1,mensagem_feedback=session['consequencia_esquerda'],titulo_feedback="Acertou!")
+                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenarios'],mensagem_feedback=session['consequencia_esquerda'],titulo_feedback="Acertou!")
 
             else:
-                session['cenario_atual'] += 1
+                session['cenario_atual'] = randint(1, len(cenarios) - 1)
                 session['cenarios'] += 1
                 
-                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenarios']-1,mensagem_feedback=session['consequencia_esquerda'],titulo_feedback="Tente novamente!")
+                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenarios'],mensagem_feedback=session['consequencia_esquerda'],titulo_feedback="Tente novamente!")
 
         else:
             if session['impacto_direita'] == 1:
                 session['pontuacao'] += 1
-                session['cenario_atual'] += 1
+                session['cenario_atual'] = randint(1, len(cenarios) - 1)
                 session['cenarios'] += 1
                 
-                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenarios']-1,mensagem_feedback=session['consequencia_direita'],titulo_feedback="Acertou!")
+                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenarios'],mensagem_feedback=session['consequencia_direita'],titulo_feedback="Acertou!")
 
             else:
-                session['cenario_atual'] += 1
+                session['cenario_atual'] = randint(1, len(cenarios) - 1)
                 session['cenarios'] += 1
                 
-                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenarios']-1,mensagem_feedback=session['consequencia_direita'],titulo_feedback="Tente Novamente!")
+                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenarios'],mensagem_feedback=session['consequencia_direita'],titulo_feedback="Tente Novamente!")
 
     session['pontuacao'] = 0
-    session['cenario_atual'] = randint(1,38)
+     # Atualiza para usar o comprimento máximo dos cenários
+    #session['cenario_atual'] = randint(1, len(cenarios) - 1)
     print(session['cenario_atual'] )
     session['cenarios'] = 1
     #get_cenario(cenarios)  # teste teste
@@ -157,7 +159,7 @@ def jogo():
             break  # Sai do loop se não houver erro
         except (KeyError, IndexError) as e:  # Captura erros comuns
             print(f"Erro ao obter cenário: {e}")
-            session['cenarios'] -= 1
+            session['cenarios'] = randint(1, len(cenarios) - 1)
 
     #if 'pontuacao' not in session:
     #    return redirect(url_for('historia'), code=302)
@@ -178,30 +180,30 @@ def jogo():
         if request.form['opcao'] == 'esquerda':
             if session['impacto_esquerda'] == 1:
                 session['pontuacao'] += 1
-                session['cenario_atual'] += 1
+                session['cenario_atual'] = randint(1, len(cenarios) - 1)
                 session['cenarios'] += 1
                 
-                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenarios']-1,mensagem_feedback=session['consequencia_esquerda'],titulo_feedback="Acertou!")
+                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenarios'],mensagem_feedback=session['consequencia_esquerda'],titulo_feedback="Acertou!")
 
             else:
-                session['cenario_atual'] += 1
+                session['cenario_atual'] = randint(1, len(cenarios) - 1)
                 session['cenarios'] += 1
                 
-                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenarios']-1,mensagem_feedback=session['consequencia_esquerda'],titulo_feedback="Tente novamente!")
+                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenarios'],mensagem_feedback=session['consequencia_esquerda'],titulo_feedback="Tente novamente!")
 
         else:
             if session['impacto_direita'] == 1:
                 session['pontuacao'] += 1
-                session['cenario_atual'] += 1
+                session['cenario_atual'] = randint(1, len(cenarios) - 1)
                 session['cenarios'] += 1
                 
-                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenarios']-1,mensagem_feedback=session['consequencia_direita'],titulo_feedback="Acertou!")
+                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenarios'],mensagem_feedback=session['consequencia_direita'],titulo_feedback="Acertou!")
 
             else:
-                session['cenario_atual'] += 1
+                session['cenario_atual'] = randint(1, len(cenarios) - 1)
                 session['cenarios'] += 1
                 
-                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenarios']-1,mensagem_feedback=session['consequencia_direita'],titulo_feedback="Tente Novamente!")
+                return render_template('consequencia.html', nonce=nonce, cenario_numero=session['cenarios'],mensagem_feedback=session['consequencia_direita'],titulo_feedback="Tente Novamente!")
     print(session['cenarios'] )    
     return render_template('jogo.html', texto_escolha_direita=session['texto_escolha_direita'], texto_escolha_esquerda=session['texto_escolha_esquerda'], texto=session['texto'], imagem=session['imagem'], personagem=session['personagem'], pontuacao=session['pontuacao'], nonce=nonce, cenario_numero=session['cenarios'])
 
